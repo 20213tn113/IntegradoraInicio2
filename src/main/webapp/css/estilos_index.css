@@ -1,0 +1,77 @@
+body{
+
+    background-image: url("../img/cecadet.jpg");
+}
+
+#div2{
+
+    text-align: left;
+    color: rgb(87, 83, 83);
+    border-radius: 5px;
+    width: 51%;
+    margin: 0% 28% 20px;
+    height: 22px;
+    clear: both;
+}
+#div3{
+
+    text-align: left;
+    color: rgb(87, 83, 83);
+    border-radius: 5px;
+    width: 51%;
+    margin: 0% 28% 20px;
+    height: 20px;
+    clear: both;
+}
+#img1{
+    margin: 5% 30% 20px;
+    border-radius: 170px;
+    width: 150px;
+    height: 150px;
+}
+#div4{
+
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    width: 25%;
+    margin: 5% 40% 10px;
+    height: 340px;
+    background-color:rgba(255, 255, 255, 0.521);
+
+}
+.div5{
+    display:inline-block;
+    background-color: #023059;
+    border-radius: 10px;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+    padding:7px 10px;
+    line-height:normal;
+    font-size: 15px;
+    font-weight:bold;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+    margin: 0% 42% 20px;
+}
+.div5:hover {
+    background:#03A678;
+    border-radius:10px;
+    color: rgb(255, 255, 255);
+}
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+input{
+    border-radius: 5px ;
+    margin: 2px;
+}
+label{
+    color: black;
+}
