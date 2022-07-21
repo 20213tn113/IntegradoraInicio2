@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class conexionMysql {
     public static Connection getConnection() throws SQLException {
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-        return DriverManager.getConnection("jdbc:mysql://localhost:3308/bd_integradora", "root", "root");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_integradora", "root", "root");
     }
     public static void main(String[] args) {
         Logger logger = LoggerFactory.getLogger(conexionMysql.class);

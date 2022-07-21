@@ -9,7 +9,7 @@ public class conexionMysql2 {
     private static String dbName="bd_integradora";
     private static String user="root";
     private static String password="root";
-    private static String portservice="3308";
+    private static String portservice="3306";
     public static Connection getConnection() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
