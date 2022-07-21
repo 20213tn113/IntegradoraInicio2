@@ -12,6 +12,9 @@
 
 <body>
 <header>
+
+    Hola wey
+
     <div class="logo">
         <img src="img/logo-utez.png">
         <h2 id="h2">PRESTAMOS DE EQUIPO</h2>
