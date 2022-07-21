@@ -6,7 +6,6 @@ body{
 header{
     display: flex ;
     min-height: 30px;
-    max-height: 30px;
     background:linear-gradient(50deg, #ffffffad, #ffffffad,#ffffffab);
     background-color: rgb(255, 245, 245);
     justify-content: space-between;
@@ -14,7 +13,6 @@ header{
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
-
 }
 
 .logo{

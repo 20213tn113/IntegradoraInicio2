@@ -12,14 +12,12 @@
 
 <body>
 <header>
-    Hola sevilla
     <div class="logo">
         <img src="img/logo-utez.png">
         <h2 id="h2">PRESTAMOS DE EQUIPO</h2>
     </div>
     <nav>
         <a href="#" class="nav-link">Inicio</a>
-
     </nav>
 </header>
 

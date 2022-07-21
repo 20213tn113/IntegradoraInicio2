@@ -2,7 +2,7 @@
 header{
     display: flex;
     min-height: 50px;
-    background:linear-gradient(40deg,#ffffff ,#038c65, #023059);
+    background-color: white;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
