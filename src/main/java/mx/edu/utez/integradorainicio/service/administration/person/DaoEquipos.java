@@ -1,5 +1,6 @@
 package mx.edu.utez.integradorainicio.service.administration.person;
 import mx.edu.utez.integradorainicio.model.administration.person.beanEquipos;
+import mx.edu.utez.integradorainicio.utility.conexionMysql;
 import mx.edu.utez.integradorainicio.utility.conexionMysql2;
 
 import org.slf4j.Logger;
@@ -13,12 +14,12 @@ import java.util.List;
 
 public class DaoEquipos {
 
-    Logger logger = LoggerFactory.getLogger(DaoPerson.class);
+    Logger logger = LoggerFactory.getLogger(DaoEquipos.class);
 
     public List<beanEquipos> consultarEquipos() {
         List<beanEquipos> ListEquipos = new ArrayList<>();
         try (
-                Connection con = conexionMysql2.getConnection();
+                Connection con = conexionMysql.getConnection();
                 Statement stm = con.createStatement();
                 ResultSet rs = stm.executeQuery("SELECT * FROM equipos;");
         ) {
@@ -41,10 +42,20 @@ public class DaoEquipos {
             e.printStackTrace();
             logger.error(e.getMessage());
         }
+
         for (int i=0; i<=ListEquipos.size()-1;i++){
             System.out.println(ListEquipos.get(i).getNombre());
         }
         return ListEquipos;
 
+    }
+
+
+
+
+
+    public beanEquipos obtenerEquipos(int id_eqo){
+        beanEquipos equipo = new beanEquipos();
+        return equipo;
     }
 }

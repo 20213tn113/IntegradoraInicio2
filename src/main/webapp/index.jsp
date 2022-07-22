@@ -28,7 +28,7 @@
     <form class="form-control bg-dark bg-opacity-50" action="ServletSesion" method="post">
         <div id="div2">
             <label for="user">Usuario: </label>
-            <input type="text"  id="user" name="user" placeholder="Usuario">
+            <input type="text"  id="user" name="user" placeholder="Usuario" >
         </div>
         <div id="div3">
             <label for="pass">Contraseña</label>

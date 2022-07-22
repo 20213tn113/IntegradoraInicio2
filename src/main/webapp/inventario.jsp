@@ -13,6 +13,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 
@@ -48,51 +49,54 @@
     <h4>${mensaje}</h4>
 </div>
 
+<div id="divScroll">
 
-<table  border="1">
-    <thead>
-    <tr>
-        <th>#</th>
-        <th>Id_Equipo</th>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Marca</th>
-        <th>Modelo</th>
-        <th>Numero de serie</th>
-        <th>Disponibilidad</th>
-        <th>Estado</th>
-        <th>Acción</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="equipo" items="${listEquipos}" varStatus="status">
+
+    <table border="1">
+        <thead>
         <tr>
-
-            <td><c:out value="${status.count}"></c:out></td>
-            <td><c:out value="${equipo.id_eqo}"></c:out></td>
-            <td><c:out value="${equipo.nombre}"></c:out></td>
-            <td><c:out value="${equipo.descripcion}"></c:out></td>
-            <td><c:out value="${equipo.marca}"></c:out></td>
-            <td><c:out value="${equipo.modelo}"></c:out></td>
-            <td><c:out value="${equipo.n_serie}"></c:out></td>
-            <td><c:out value="${equipo.disponibilidad}"></c:out></td>
-            <td><c:out value="${equipo.estado}"></c:out></td>
-
-            <td>
-                <h5>
-                    <form action="ServletSesion" method="post">
-                        <input type="hidden" value="eliminar" name="accion"/>
-                        <input type="hidden" name="id" value="${person.id}"/>
-                        <input type="submit" value="Eliminar"/>
-                    </form>
-
-                    <a href="<c:url value = "/getEquipo?id=${equipos.id_eqo}"/>"> <input type="submit" value="Modificar"/> </a></h5>
-            </td>
+            <th>#</th>
+            <th>Id_Equipo</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Numero de serie</th>
+            <th>Disponibilidad</th>
+            <th>Estado</th>
+            <th>Acción</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach var="equipos" items="${ListEquipos}" varStatus="status">
+            <tr>
 
+                <td><c:out value="${status.count}"></c:out></td>
+                <td><c:out value="${equipos.id_eqo}"></c:out></td>
+                <td><c:out value="${equipos.nombre}"></c:out></td>
+                <td><c:out value="${equipos.descripcion}"></c:out></td>
+                <td><c:out value="${equipos.marca}"></c:out></td>
+                <td><c:out value="${equipos.modelo}"></c:out></td>
+                <td><c:out value="${equipos.n_serie}"></c:out></td>
+                <td><c:out value="${equipos.disponibilidad}"></c:out></td>
+                <td><c:out value="${equipos.estado}"></c:out></td>
+
+                <td>
+                    <h5>
+                        <form action="ServletSesion" method="post">
+                            <input type="hidden" value="eliminar" name="accion"/>
+                            <input type="hidden" name="id" value="${person.id}"/>
+                            <input type="submit" value="Eliminar"/>
+                        </form>
+
+                        <a href="<c:url value = "/getEquipo?id=${equipos.id_eqo}"/>"> <input type="submit" value="Modificar"/> </a></h5>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+
+</div>
 
 
 
