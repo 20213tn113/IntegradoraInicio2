@@ -41,13 +41,13 @@ public class ServletSesion extends HttpServlet {
                     sesionLogin.setAttribute("pass",usuario.getPass());
                     sesionLogin.setAttribute("id",usuario.getId());
                     mensaje="Bienvenido al sistema " + usuario.getUser();
-                    dispatcher =request.getRequestDispatcher("menu.jsp");
+                    dispatcher =request.getRequestDispatcher("admin.jsp");
 
                 }else{
                     System.out.println("No se encontró en la BD!");
                     mensaje = "Datos incorrectos, verifica tu usuario y/o contraseña.";
                     clase="alert alert-danger";
-                    dispatcher=request.getRequestDispatcher("index.jsp");
+                    dispatcher=request.getRequestDispatcher("admin.jsp");
                     request.getRequestDispatcher(mensaje);
 
                 }

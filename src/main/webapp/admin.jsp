@@ -1,5 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String user = (String) (session.getAttribute("user"));
+    String pass = (String) (session.getAttribute("pass"));
+    if (user!= null & pass != null){
+        System.out.println("sesion: usuario: "+ user+ " pass: "+pass) ;
+
+%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,7 +53,7 @@
             <img id="img1"
                  src="img/inventario.png"
                  alt="">
-            <a id="a1">Acceder</a>
+            <a id="a1" href="getEquipos">Acceder</a>
 
         </div>
 
@@ -75,3 +83,10 @@
 
 
 </body>
+
+<% }else{
+    System.out.println("No hay sesión iniciada!");
+    request.getRequestDispatcher("index.jsp").forward(request,response);
+
+}
+%>

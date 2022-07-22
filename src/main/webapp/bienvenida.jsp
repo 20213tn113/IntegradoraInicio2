@@ -22,7 +22,7 @@
     </div>
     <nav>
         <%--@declare id="country"--%><a href="#" class="nav-link" >RESERVAR AQUI</a>
-        <a href="#" class="nav-link">INICIAR SESION</a>
+        <a href="index.jsp" class="nav-link">INICIAR SESION</a>
         <!-- <a href="#" class="nav-link">Horario</a> -->
         <label for="country" class="form-label"></label>
         <select class="form-select" id="Horario">

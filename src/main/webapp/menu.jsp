@@ -32,7 +32,7 @@
     </div>
     <nav>
         <a href="#">Cerrar Sesión</a>
-        <a href="getEquipos" class="nav-link">Inicio</a>
+        <a href="#" class="nav-link">Inicio</a>
         <!-- <a href="#" class="nav-link">Horario</a> -->
         <select name="Horario" id="mot">
             <option value="p">Horario</option>
