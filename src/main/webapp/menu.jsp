@@ -6,6 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String user = (String) (session.getAttribute("user"));
+    String pass = (String) (session.getAttribute("pass"));
+    if (user!= null & pass != null){
+        System.out.println("sesion: usuario: "+ user+ " pass: "+pass) ;
+
+%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -24,8 +31,8 @@
         <h2 id="h12">MENÚ PRESTAMOS DE EQUIPO</h2>
     </div>
     <nav>
-        <a href="#">Cerrar Sesion</a>
-        <a href="#" class="nav-link">Inicio</a>
+        <a href="#">Cerrar Sesión</a>
+        <a href="getEquipos" class="nav-link">Inicio</a>
         <!-- <a href="#" class="nav-link">Horario</a> -->
         <select name="Horario" id="mot">
             <option value="p">Horario</option>
@@ -172,3 +179,10 @@
 
 </body>
 </html>
+
+<% }else{
+    System.out.println("No hay sesión iniciada!");
+    request.getRequestDispatcher("index.jsp").forward(request,response);
+
+}
+%>

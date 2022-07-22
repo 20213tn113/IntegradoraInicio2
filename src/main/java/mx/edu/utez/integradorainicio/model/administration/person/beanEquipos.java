@@ -23,6 +23,8 @@ public class beanEquipos {
     }
 
 
+    public beanEquipos(){    }
+
     public void setId_eqo(String id_eqo) {
         this.id_eqo = id_eqo;
     }

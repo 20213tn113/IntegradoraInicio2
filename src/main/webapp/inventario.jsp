@@ -1,3 +1,9 @@
+<%@ page import="java.util.List" %>
+<%@ page import="mx.edu.utez.integradorainicio.model.administration.person.beanEquipos" %>
+<%@ page import="mx.edu.utez.integradorainicio.service.administration.person.DaoEquipos" %>
+
+
+
 <%--
   Created by IntelliJ IDEA.
   User: Lenovo
@@ -6,12 +12,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="UTF-8" %>
+
+<%
+    String user = (String) (session.getAttribute("user"));
+    String pass = (String) (session.getAttribute("pass"));
+    if (user!= null & pass != null){
+        System.out.println("sesion: usuario: "+ user+ " pass: "+pass) ;
+
+%>
 <html>
 <head>
-        <title>Inventario v0.1</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <title>Inventario</title>
+
         <link rel="stylesheet" href="css/estilosinventario.css">
         <link rel="stylesheet" href="css/estilosheader.css ">
         <link rel="stylesheet" href="css/estilos_index.css">
@@ -29,45 +42,67 @@
     </nav>
 </header>
 
-
-
-<div class="contenedor" ng-app="InventarioApp" ng-controller="InventarioCtrl">
-
-    <table class="controles">
-        <tr>
-            <th colspan="4" class="celdaControles celdaTitulo">Sistema de gestión de inventarios</th>
-        </tr>
-        <tr>
-            <td colspan="2" class="celdaControles celdaLabelSelector">Visualizar categoría</td>
-            <td colspan="2" class="celdaControles">
-                <select class="selector-categoria" ng-model="categoria" ng-options="cat for cat in listaCategorias" ng-change="actualizaCategoria()">
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td class="celdaControles celdaBusqueda"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></td>
-            <td class="celdaControles celdaFiltroRef">
-                <input ng-model="filterRef" placeholder="Referencia" />
-            </td>
-            <td class="celdaControles celdaFiltroDesc">
-                <input ng-model="filterDesc" placeholder="Descripción" />
-            </td>
-            <td class="celdaControles celdaCrear"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></td>
-        </tr>
-    </table>
-
-    <table class="resultados">
-        <tr ng-repeat="item in listaItems | filter:{ref:filterRef, desc:filterDesc}">
-
-            <td class="celdaResultados celdaRef">[{{item.ref}}]</td>
-            <td class="celdaResultados celdaDesc">{{item.desc}}</td>
-            <td class="celdaResultados celdaOpc">
-                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-            </td>
-        </tr>
-    </table>
+<div class="${clase}" role="alert">
+    <h4>${mensaje}</h4>
 </div>
-<script src="inventario.js"></script>
+
+
+<table  border="1">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Id_Equipo</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Numero de serie</th>
+        <th>Disponibilidad</th>
+        <th>Estado</th>
+        <th>Acción</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="equipo" items="${listEquipos}" varStatus="status">
+        <tr>
+
+            <td><c:out value="${status.count}"></c:out></td>
+            <td><c:out value="${equipo.id_eqo}"></c:out></td>
+            <td><c:out value="${equipo.nombre}"></c:out></td>
+            <td><c:out value="${equipo.descripcion}"></c:out></td>
+            <td><c:out value="${equipo.marca}"></c:out></td>
+            <td><c:out value="${equipo.modelo}"></c:out></td>
+            <td><c:out value="${equipo.n_serie}"></c:out></td>
+            <td><c:out value="${equipo.disponibilidad}"></c:out></td>
+            <td><c:out value="${equipo.estado}"></c:out></td>
+
+            <td>
+                <h5>
+                    <form action="ServletSesion" method="post">
+                        <input type="hidden" value="eliminar" name="accion"/>
+                        <input type="hidden" name="id" value="${person.id}"/>
+                        <input type="submit" value="Eliminar"/>
+                    </form>
+
+                    <a href="<c:url value = "/getEquipo?id=${equipos.id_eqo}"/>"> <input type="submit" value="Modificar"/> </a></h5>
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+
+
+
+
+
+
+
 </body>
 </html>
+
+<% }else{
+    System.out.println("No hay sesión iniciada!");
+    request.getRequestDispatcher("index.jsp").forward(request,response);
+
+}
+%>

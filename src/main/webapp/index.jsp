@@ -17,7 +17,7 @@
         <h2 id="h2">PRESTAMOS DE EQUIPO</h2>
     </div>
     <nav>
-        <a href="#" class="nav-link">Inicio</a>
+        <a href="inventario.jsp" class="nav-link">Inicio</a>
     </nav>
 </header>
 
