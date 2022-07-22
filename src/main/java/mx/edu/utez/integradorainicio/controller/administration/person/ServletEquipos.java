@@ -22,7 +22,7 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@WebServlet(name = "ServletEquipos",urlPatterns = "/ServletEquipos")
+@WebServlet(name = "ServletEquipos",urlPatterns ={ "/getEquipos","/getEquipo"})
 public class ServletEquipos extends HttpServlet {
 
     Logger logger = Logger.getLogger("ServletPerson");

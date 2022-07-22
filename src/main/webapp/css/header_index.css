@@ -25,9 +25,9 @@ header{
 
 header  nav a {
     display:inline-block;
-    background-color: #ffffff;
+    background-color: #022859;
     border-radius: 10px;
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     text-decoration:none;
     padding:10px 20px;
     line-height:normal;
