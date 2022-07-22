@@ -30,12 +30,32 @@
 
 <center> <h2>REGISTRO</h2></center>
 
+<div class="${clase}" role="alert">
+    <h4>${mensaje}</h4>
+</div>
 
 <section id="seccion1">
-    <form class="row g-3">
+    <form class="form-control bg-dark bg-opacity-50" action="ServletUsuario" method="post">
+
         <div class="col-md-4">
-            <label for="validationServer01" class="form-label">Nombre: *</label>
-            <input type="text" class="form-control is-valid" id="validationServer01" required>
+            <label class="form-label">Matricula: *</label>
+            <input type="text" class="form-control is-valid" name="matricula" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Nombre: *</label>
+            <input type="text" class="form-control is-valid" name="nombre" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationServer01" class="form-label">Apellido: *</label>
+            <input type="text" class="form-control is-valid" name="apellido" required>
             <div class="valid-feedback">
                 Looks good!
             </div>
@@ -43,25 +63,25 @@
 
         </div>
         <div class="col-md-4">
-            <label for="validationServerUsername" class="form-label">Correo: *</label>
+            <label class="form-label">Correo: *</label>
             <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                <input type="text" class="form-control id="validationServerUsername aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                <input type="text" class="form-control" name="correo">
                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                    Please choose a username.
+
                 </div>
             </div>
         </div>
 
         <div class="col-md-3">
-            <label for="validationServer04" class="form-label">Cantidad: *</label>
-            <select class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+            <label class="form-label">Cantidad: *</label>
+            <select class="form-select" name="cantidad">
 
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="0">...</option>
 
 
             </select>
@@ -81,7 +101,7 @@
         </div>
         <div class="col-md-3">
             <label for="validationServer05" class="form-label">Hora-inico: *</label>
-            <input type="text" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+            <input type="datetime-local" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
             <div id="validationServer05Feedback" class="invalid-feedback">
                 Proporcione una hora de incio.
             </div>
@@ -90,7 +110,7 @@
         </div>
         <div class="col-md-3">
             <label for="validationServer05" class="form-label">Hora-final: *</label>
-            <input type="text" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+            <input type="datetime-local" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
             <div id="validationServer05Feedback" class="invalid-feedback">
                 Proporcione una hora final.
             </div>
@@ -110,7 +130,16 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <label class="form-label">Rol: *</label>
+            <input type="text" class="form-control is-valid" name="rol" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
         <div class="col-12">
+            <input type="hidden" value="reservar" name="action">
             <button class="btn btn-primary" type="submit">RESERVAR</button>
         </div>
     </form>
