@@ -1,0 +1,25 @@
+#reservas{
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 100%;
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+
+h1{
+    font-size: 100%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: oblique;
+    text-align: center;
+}
+
+.botones{
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+

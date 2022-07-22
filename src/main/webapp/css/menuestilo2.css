@@ -1,0 +1,123 @@
+
+section {
+    padding-right: 5%;
+    padding-left: 5%;
+    align-items: center;
+    width: 90%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
+}
+
+section div {
+    margin: 100 px;
+    width: 20%;
+    height: 360px;
+    margin: 2% 0% 0px;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    align-items: center;
+    
+    
+}
+
+
+
+#div1{
+
+    text-align: center;
+    padding-top: 6px;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border-end-end-radius: 0;
+    border-end-start-radius: 0;
+    width: 100%;
+    margin: 0% 0% 20px;
+    height: 30px;
+    background-color:#022859;
+    clear: both;
+    text-decoration: wavy;
+
+}
+#img1{
+    margin: 0% 0% 0px;
+  width: 200px;
+  height: 160px;
+  align-items: center;
+}
+
+
+#div2{
+
+    text-align: center;
+    padding-top: 5px;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    border-end-end-radius: 0;
+    border-end-start-radius: 0;
+    width: 100%;
+    margin: 0% 0% 0px;
+    height: 25px;
+    background-color: #03A678;
+    clear: both;
+    text-decoration: solid;
+}
+#div3{
+
+    text-align: center;
+    padding-top: 5px;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    border-end-end-radius: 0;
+    border-end-start-radius: 0;
+    width: 100%;
+    margin: 2% 0% 0px;
+    height: 25px;
+    background-color: #038c65;
+    clear: both;
+    text-decoration: solid;
+
+}
+#div4{
+
+    text-align: center;
+    padding-top: 5px;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    border-end-end-radius: 0;
+    border-end-start-radius: 0;
+    width: 100%;
+    margin: 4% 0% 0px;
+    height: 25px;
+    background-color: #c4c0c0d0;
+    clear: both;
+    text-decoration: solid;
+
+}
+
+
+
+#a1{
+    display:inline-block;
+    background-color: #022859;
+    border-radius: 5px;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+    padding:10px 20px;
+    line-height:normal;
+    font-size: 14px;
+    font-weight:bold;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+    margin: 6% 32% 20px;
+}
+#a1:hover {
+    background:#03A678;
+    border-radius:5px;
+    color: rgb(255, 255, 255);
+}
