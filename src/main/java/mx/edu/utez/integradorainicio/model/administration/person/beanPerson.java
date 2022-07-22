@@ -1,5 +1,6 @@
 package mx.edu.utez.integradorainicio.model.administration.person;
 
+
 public class beanPerson {
     private int id;
     private String nombre;
@@ -24,8 +25,14 @@ public class beanPerson {
         this.pass = pass;
     }
 
+    public beanPerson(String name, String user, String pass) {
+        this.user = user;
+        this.pass = pass;
+        this.nombre = name;
+    }
+    public beanPerson() {
 
-
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -64,3 +71,4 @@ public class beanPerson {
 
 
 }
+

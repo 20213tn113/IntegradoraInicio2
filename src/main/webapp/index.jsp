@@ -25,7 +25,7 @@
 <div id="div4">
     <img id="img1" src="img/halcon.jpg" alt="">
 
-    <form class="form-control bg-dark bg-opacity-50" action="ServletPerson" method="post">
+    <form class="form-control bg-dark bg-opacity-50" action="ServletSesion" method="post">
         <div id="div2">
             <label for="user">Usuario: </label>
             <input type="text"  id="user" name="user" placeholder="Usuario">
