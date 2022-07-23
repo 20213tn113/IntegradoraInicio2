@@ -30,8 +30,8 @@
 
         <link rel="stylesheet" href="css/estilosinventario.css">
         <link rel="stylesheet" href="css/estilosheader.css ">
-        <link rel="stylesheet" href="css/estilos_index.css">
-        <script src="inventario.js"></script>
+
+
 </head>
 <body>
 <header>

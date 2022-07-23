@@ -1,3 +1,6 @@
+body{
+    background-color: #038c65;
+}
 .contenedor {
     border: 1px solid black;
     font-size: 25px;
@@ -36,4 +39,9 @@
     overflow:scroll;
     height:200px;
     width:500px;
+}
+
+table{
+    color: black;
+
 }
