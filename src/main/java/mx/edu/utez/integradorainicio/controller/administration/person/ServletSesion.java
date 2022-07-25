@@ -36,11 +36,13 @@ public class ServletSesion extends HttpServlet {
                 usuario=daoUsuario.consultaLogin(usuario);
                 System.out.println(request.getParameter("user"));
                 System.out.println(request.getParameter("pass"));
+                System.out.println(request.getParameter("name"));
                 if(usuario !=null){
                     sesionLogin.setAttribute("user", usuario.getUser());
                     sesionLogin.setAttribute("pass",usuario.getPass());
                     sesionLogin.setAttribute("id",usuario.getId());
-                    mensaje="Bienvenido al sistema " + usuario.getUser();
+                    sesionLogin.setAttribute("name", usuario.getNombre());
+                    mensaje="Bienvenido al sistema " + usuario.getNombre();
                     dispatcher =request.getRequestDispatcher("admin.jsp");
 
                 }else{

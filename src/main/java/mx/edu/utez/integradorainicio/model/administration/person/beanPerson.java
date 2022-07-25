@@ -25,10 +25,10 @@ public class beanPerson {
         this.pass = pass;
     }
 
-    public beanPerson(String name, String user, String pass) {
+    public beanPerson(String nombre, String user, String pass) {
         this.user = user;
         this.pass = pass;
-        this.nombre = name;
+        this.nombre = nombre;
     }
     public beanPerson() {
 

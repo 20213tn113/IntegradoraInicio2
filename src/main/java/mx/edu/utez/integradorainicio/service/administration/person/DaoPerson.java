@@ -46,13 +46,15 @@ public class DaoPerson {
             ps.setString(1,usuario.getUser());
             ps.setString(2,usuario.getPass());
 
+
             ResultSet res= ps.executeQuery();
             if(res.next()){
                 login=new beanPerson(res.getInt("iduser"),
-                        res.getString("user"), res.getString("pass"));
+                        res.getString("user"), res.getString("pass"), res.getString("name"));
                 System.out.println(res.getInt("iduser"));
                 System.out.println(res.getString("user"));
                 System.out.println(res.getString("pass"));
+                System.out.println(res.getString("name"));
             }
         }catch(Exception e){
             e.printStackTrace();
