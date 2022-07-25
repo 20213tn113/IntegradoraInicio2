@@ -39,8 +39,10 @@
 
         </nav>
     </header>
+    <div class="${clase}" role="alert">
+        <h4>${mensaje}</h4>
+    </div>
 
-    <h1> BIENVENIDA ADMINSTRADOR </h1>
     <section>
 
         <div>

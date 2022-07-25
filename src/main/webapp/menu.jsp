@@ -31,8 +31,8 @@
         <h2 id="h12">MENÚ PRESTAMOS DE EQUIPO</h2>
     </div>
     <nav>
-        <a href="#">Cerrar Sesión</a>
-        <a href="#" class="nav-link">Inicio</a>
+        <a href="admin.jsp" class="nav-link">Atras</a>
+        <a href="#" class="nav-link">Cerrar Sesión</a>
         <!-- <a href="#" class="nav-link">Horario</a> -->
         <select name="Horario" id="mot">
             <option value="p">Horario</option>
@@ -47,7 +47,7 @@
         <P id="div1">SWITCHES</P>
 
         <img id="img1"
-             src="https://say02.odoo.com/web/image/271-ce880aa4/switch-cisco-20ptos-10gb-24xcobre-10gbaset-4-combo.jpg"
+             src="img/switch.jpeg"
              alt="">
         <p id="div2">CANTIDAD DISPONIBLE</p>
         <p id="div3">UNIDADES</p>
@@ -57,7 +57,7 @@
     <div>
         <P id="div1">ROUTER</P>
         <img id="img1"
-             src="https://say02.odoo.com/web/image/272-5cab5e3e/cisco-isr4321-vsec-k9-isr-4321-router-1-000-mbps-10125252-Gbzo.jpg"
+             src="img/router.jpeg"
              alt="">
         <p id="div2">CANTIDAD DISPONIBLE</p>
         <p id="div3">UNIDADES</p>
@@ -66,7 +66,7 @@
     </div>
     <div>
         <P id="div1">LAPTOP</P>
-        <img id="img1" src="https://say02.odoo.com/web/image/273-c5cbebfe/G8-1-300x300.jpg" alt="">
+        <img id="img1" src="img/computadora.jpeg" alt="">
         <p id="div2">CANTIDAD DISPONIBLE</p>
         <p id="div3">UNIDADES</p>
         <p id="div4">Solicítalo</p>

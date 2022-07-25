@@ -45,6 +45,7 @@ public class DaoPerson {
             PreparedStatement ps=con.prepareStatement(sqlLogin);
             ps.setString(1,usuario.getUser());
             ps.setString(2,usuario.getPass());
+
             ResultSet res= ps.executeQuery();
             if(res.next()){
                 login=new beanPerson(res.getInt("iduser"),

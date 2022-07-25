@@ -34,23 +34,19 @@
     <div class="logo">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Logo-utez.png/300px-Logo-utez.png"
              class="logo-img">
-        <h2 id="h12" class="logo-nombre">Sistema de Prestamos</h2>
+        <h2 id="h12" class="logo-nombre">Reservaciones Actuales/Vigentes</h2>
     </div>
     <nav>
-        <%--@declare id="country"--%><a href="#" class="nav-link">Inicio</a>
+        <%--@declare id="country"--%><a href="admin.jsp" class="nav-link">Regresar</a>
         <!-- <a href="#" class="nav-link">Horario</a> -->
         <label for="country" class="form-label"></label>
-        <select class="form-select" id="Horario">
-            <option value="n" selected disabled>Horarios</option>
-            <option value="n">8:00 a.m.</option>
-            <option value="t">8:00 p.m.</option>
-        </select>
+
     </nav>
 </header>
 
 <div>
     <html>
-    <h1>RESERVACIONES ACTUALES/VIGENTES</h1>
+
     <form>Busqueda: <input id="txtBusqueda" type="text" onkeyup="Buscar();" /></form>
     <table id="reservas">
         <tbody>
