@@ -1,4 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    String user = (String) (session.getAttribute("user"));
+    String pass = (String) (session.getAttribute("pass"));
+    if (user!= null & pass != null){
+        System.out.println("sesion: usuario: "+ user+ " pass: "+pass) ;
+
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +21,11 @@
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
     <link rel="stylesheet" href="css/headerestilo2.css">
+
+
     <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.esm.min.js.map"></script>
+
+
 </head>
 
 <body>
@@ -140,3 +152,10 @@
 </body>
 
 </html>
+
+<% }else{
+    System.out.println("No hay sesión iniciada!");
+    request.getRequestDispatcher("index.jsp").forward(request,response);
+
+    }
+%>

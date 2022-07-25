@@ -58,14 +58,14 @@
             <img id="img1"
                  src="img/realipres.jpg"
                  alt="">
-            <a id="a1">Acceder</a>
+            <a id="a1" href="menu.jsp">Acceder</a>
         </div>
         <div>
             <P id="div1">Historial de Sanciones</P>
             <img id="img1"
                  src="img/sancion.jpg"
                  alt="">
-            <a id="a1">Acceder</a>
+            <a id="a1" href="sanciones.jsp">Acceder</a>
         </div>
         <div>
             <P id="div1">Reservaciones Vigentes</P>

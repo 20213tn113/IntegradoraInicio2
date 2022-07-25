@@ -1,4 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    String user = (String) (session.getAttribute("user"));
+    String pass = (String) (session.getAttribute("pass"));
+    if (user!= null & pass != null){
+        System.out.println("sesion: usuario: "+ user+ " pass: "+pass) ;
+
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,34 +14,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.esm.min.js.map"></script>
+
     <link rel="stylesheet" href="css/headerestilo2.css">
 
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/estilosheader.css">
-    <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.esm.min.js.map"></script>
+
 </head>
 <body>
 <header>
     <div class="logo">
         <img src="img/logo-utez.png" class="logo-img">
-        <h2 id="h12" class="logo-nombre">Sistema de Préstamos</h2>
+        <h2 id="h12" class="logo-nombre">Historial de Sancionados</h2>
     </div>
     <nav>
-        <a href="#" class="nav-link" >Inicio</a>
-        <a href="#" class="nav-link">Cerrar Sesión</a>
+        <a href="admin.jsp" class="nav-link" >Atras</a>
+        <a href="#" class="nav-link">Inicio</a>
     </nav>
 
 </header>
 
 <div>
     <html>
-    <h1>HISTORIAL DE SANCIONADOS</h1>
+
     <form>Busqueda: <input id="txtBusqueda" type="text" onkeyup="Buscar();" /></form>
-    <table id="sanciones">
+
+    <table id="reservas">
         <tbody>
         <tr>
-            <th>Fecha</th>
+            <th id="tdfecha">Fecha</th>
             <th>Correo</th>
             <th>Nombre</th>
             <th>Razon/Motivo</th>
@@ -111,7 +121,11 @@
 </div>
 
 
-
-
 </body>
 </html>
+<% }else{
+    System.out.println("No hay sesión iniciada!");
+    request.getRequestDispatcher("index.jsp").forward(request,response);
+
+}
+%>
