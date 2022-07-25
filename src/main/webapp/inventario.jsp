@@ -28,8 +28,11 @@
 <head>
         <title>Inventario</title>
 
-        <link rel="stylesheet" href="css/estilosinventario.css">
-        <link rel="stylesheet" href="css/estilosheader.css ">
+
+
+    <link rel="stylesheet" href="css/estilosinventario.css">
+
+    <link rel="stylesheet" href="css/estilosheader.css ">
 
 
 </head>
@@ -37,11 +40,10 @@
 <header>
     <div class="logo">
         <img src="img/logo-utez.png" class="logo-img">
-        <h2 class="logo-nombre">Sistema de Préstamos</h2>
+        <h2 id="h12">Inventario</h2>
     </div>
     <nav>
-        <a href="#" class="nav-link" >Inicio</a>
-        <a href="#" class="nav-link">Cerrar Sesión</a>
+        <a href="admin.jsp" class="nav-link" >Regresar</a>
     </nav>
 </header>
 

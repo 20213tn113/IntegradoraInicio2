@@ -33,14 +33,10 @@
         <nav>
 
 
-            <%--@declare id="country"--%><a href="#" class="nav-link">Inicio</a>
+            <%--@declare id="country"--%><a href="#" class="nav-link">Cerrar Sesión</a>
             <!-- <a href="#" class="nav-link">Horario</a> -->
             <label for="country" class="form-label"></label>
-            <select class="form-select" id="Horario">
-                <option value="n" selected disabled>Horarios</option>
-                <option value="n">8:00 a.m.</option>
-                <option value="t">8:00 p.m.</option>
-            </select>
+
         </nav>
     </header>
 
@@ -76,7 +72,7 @@
             <img id="img1"
                  src="img/reservas.png"
                  alt="">
-            <a id="a1">Acceder</a>
+            <a id="a1" href="reservas.jsp">Acceder</a>
         </div>
     </section>
 </center>
