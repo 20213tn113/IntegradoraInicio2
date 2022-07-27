@@ -19,7 +19,8 @@ public class ServletEquipos extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id_eqo2;
+        int id;
+        String id2;
         String id_eqo;
          String nombre;
          String descripcion;
@@ -41,7 +42,7 @@ public class ServletEquipos extends HttpServlet {
 
         switch (peticion){
             case "actualizar":
-                id_eqo2=request.getParameter("id_eqo2");
+                id2= request.getParameter("id");
                 id_eqo=request.getParameter("id_eqo");
                 nombre=request.getParameter("nombre");
                 descripcion=request.getParameter("descripcion");
@@ -51,11 +52,12 @@ public class ServletEquipos extends HttpServlet {
                 disponibilidad=request.getParameter("disponibilidad");
                 estado=request.getParameter("estado");
 
-                idEquipoString = request.getParameter("id_eqo2")!=null?request.getParameter("id_eqo2"):"0";
+                idEquipoString = request.getParameter("id")!=null?request.getParameter("id"):"0";
 
-                String idEquipos = idEquipoString;
+                int idEquipos = Integer.parseInt(idEquipoString);
 
-                System.out.println("IdEquipos: "+idEquipos);
+                System.out.println("ID PRUEBA: "+id2);
+                System.out.println("IdEquipos que llego: "+idEquipos);
                 System.out.println("Actualiza id_eqo: "+id_eqo);
                 System.out.println("Actualiza nombre: "+nombre);
                 System.out.println("Actualiza descripcion: "+descripcion);
@@ -66,18 +68,16 @@ public class ServletEquipos extends HttpServlet {
                 System.out.println("Actualiza estado: "+estado);
 
 
-
-
-                equipos = new beanEquipos(idEquipos,nombre,descripcion,marca,modelo,n_serie,disponibilidad,estado);
+                equipos = new beanEquipos(idEquipos,id_eqo,nombre,descripcion,marca,modelo,n_serie,disponibilidad,estado);
 
                 if(new DaoEquipos().updateEquipos(equipos)){
                     mensaje="Usuario actualizado correctamente!";
                     request.setAttribute("mensaje","Usuario actualizado correctamente!");
-                    System.out.println("El usuario ha sido modificado");
+                    System.out.println("El Equipo ha sido modificado");
                     dispatcher =request.getRequestDispatcher("admin.jsp");
                     request.getRequestDispatcher(mensaje);
                 }else{
-                    mensaje="Error al actualizar el usuario!";
+                    mensaje="Error al actualizar el Equipo!";
                     request.setAttribute("mensaje","Error al actualizar el usuario!");
                     dispatcher =request.getRequestDispatcher("admin.jsp");
                     request.getRequestDispatcher(mensaje);

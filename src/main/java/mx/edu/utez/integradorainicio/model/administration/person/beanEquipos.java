@@ -2,6 +2,7 @@ package mx.edu.utez.integradorainicio.model.administration.person;
 
 public class beanEquipos {
 
+    private int id;
     private String id_eqo;
     private String nombre;
     private String descripcion;
@@ -11,7 +12,18 @@ public class beanEquipos {
     private String disponibilidad;
     private String estado;
 
-    private String id_eqo2;
+
+    public beanEquipos(int id, String id_eqo, String nombre, String descripcion, String marca, String modelo, String n_serie, String disponibilidad, String estado) {
+        this.id = id;
+        this.id_eqo = id_eqo;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.n_serie = n_serie;
+        this.disponibilidad = disponibilidad;
+        this.estado = estado;
+    }
 
     public beanEquipos(String id_eqo, String nombre, String descripcion, String marca, String modelo, String n_serie, String disponibilidad, String estado) {
         this.id_eqo = id_eqo;
@@ -25,19 +37,13 @@ public class beanEquipos {
     }
 
 
-    public beanEquipos(String id_eqo, String nombre, String descripcion, String marca, String modelo, String n_serie, String disponibilidad, String estado, String id_eqo2) {
-        this.id_eqo = id_eqo;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.n_serie = n_serie;
-        this.disponibilidad = disponibilidad;
-        this.estado = estado;
-        this.id_eqo2 = id_eqo2;
-    }
+
 
     public beanEquipos(){    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setId_eqo(String id_eqo) {
         this.id_eqo = id_eqo;
@@ -72,6 +78,9 @@ public class beanEquipos {
     }
 
 
+    public int getId() {
+        return id;
+    }
 
     public String getId_eqo() {
         return id_eqo;

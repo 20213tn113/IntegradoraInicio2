@@ -31,7 +31,7 @@
         <p><label>Disponibilidad:</label> <input type="text" name="disponibilidad" value="${equipos.disponibilidad}"/></p>
         <p><label>Estado de Equipo:</label> <input type="text" name="estado" value="${equipos.estado}"/></p>
         <input type="hidden" value="actualizar" name="accion"/>
-        <input type="hidden" name="id_eqo" value="${equipos.id_eqo}"/>
+        <input type="hidden" name="id" value="${equipos.id}"/>
         <input type="submit" value="Actualizar Datos"/>
     </fieldset>
 </form>

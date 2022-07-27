@@ -23,7 +23,7 @@ public class DaoEquipos {
         ) {
             while (rs.next()) {
                 beanEquipos equipos = new beanEquipos();
-
+                equipos.setId(rs.getInt("id"));
                 equipos.setId_eqo(rs.getString("id_eqo"));
                 equipos.setNombre(rs.getString("nombre"));
                 equipos.setDescripcion(rs.getString("descripcion"));
@@ -42,6 +42,10 @@ public class DaoEquipos {
         }
 
         for (int i=0; i<=ListEquipos.size()-1;i++){
+            System.out.println(ListEquipos.get(i).getId());
+        }
+
+        for (int i=0; i<=ListEquipos.size()-1;i++){
             System.out.println(ListEquipos.get(i).getNombre());
         }
         return ListEquipos;
@@ -52,15 +56,15 @@ public class DaoEquipos {
 
 
 
-    public beanEquipos obtenerEquipos(String id_eqo){
+    public beanEquipos obtenerEquipos(int id){
         beanEquipos equipos = new beanEquipos();
         try (Connection con = conexionMysql2.getConnection();
-             PreparedStatement stm = con.prepareStatement("select * from equipos where id_eqo=?");
+             PreparedStatement stm = con.prepareStatement("select * from equipos where id=?");
         ) {
-            stm.setString(1, id_eqo);
+            stm.setInt(1, id);
             try (ResultSet rs = stm.executeQuery();) {
                 while (rs.next()) {
-
+                    equipos.setId(rs.getInt("id"));
                     equipos.setId_eqo(rs.getString("id_eqo"));
                     equipos.setNombre(rs.getString("nombre"));
                     equipos.setDescripcion(rs.getString("descripcion"));
@@ -69,7 +73,6 @@ public class DaoEquipos {
                     equipos.setN_serie(rs.getString("n_serie"));
                     equipos.setDisponibilidad(rs.getString("disponibilidad"));
                     equipos.setEstado(rs.getString("estado"));
-
                 }
 
             } catch (Exception e) {
@@ -86,7 +89,7 @@ public class DaoEquipos {
         boolean status=false;
         try{
             Connection con=conexionMysql2.getConnection();
-            String sql = "UPDATE equipos SET id_eqo=?, nombre=?, descripcion=?, marca=?, modelo=?, n_serie=?, disponibilidad=?, estado=? WHERE id_eqo="+equipos.getId_eqo();
+            String sql = "UPDATE equipos SET id_eqo=?, nombre=?, descripcion=?, marca=?, modelo=?, n_serie=?, disponibilidad=?, estado=? WHERE id="+equipos.getId();
 
             PreparedStatement pstm=con.prepareStatement(sql);
 

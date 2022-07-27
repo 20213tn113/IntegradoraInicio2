@@ -44,14 +44,15 @@ public class ServletEquiposSolicitar extends HttpServlet {
                 break;
 
             case "/getEquipo":
-                String idEquipoString = request.getParameter("id_eqo")!=null?request.getParameter("id_eqo"):"0";
+                String idEquipoString = request.getParameter("id")!=null?request.getParameter("id"):"0";
                 try {
-                    String idEquipo = idEquipoString;
+                    int idEquipo = Integer.parseInt(idEquipoString);
+                    System.out.println("LLEGO EL ID: "+idEquipo);
                     beanEquipos equipos = new DaoEquipos().obtenerEquipos(idEquipo);
                     request.setAttribute("equipos",equipos);
                     urlRedirect="updateEquipos.jsp";
                 }catch (Exception e){
-                    urlRedirect="/getPersons";
+                    urlRedirect="/getEquipos";
                 }
                 break;
 

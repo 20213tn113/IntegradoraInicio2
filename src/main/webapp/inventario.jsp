@@ -73,7 +73,7 @@
         <c:forEach var="equipos" items="${ListEquipos}" varStatus="status">
             <tr>
 
-                <td><c:out value="${status.count}"></c:out></td>
+                <td><c:out value="${equipos.id}"></c:out></td>
                 <td><c:out value="${equipos.id_eqo}"></c:out></td>
                 <td><c:out value="${equipos.nombre}"></c:out></td>
                 <td><c:out value="${equipos.descripcion}"></c:out></td>
@@ -87,11 +87,11 @@
                     <h5>
                         <form action="ServletSesion" method="post">
                             <input type="hidden" value="eliminar" name="accion"/>
-                            <input type="hidden" name="id" value="${person.id}"/>
+                            <input type="hidden" name="id" value="${equipos.id}"/>
                             <input type="submit" value="Eliminar"/>
                         </form>
 
-                        <a href="<c:url value = "/getEquipo?id_eqo=${equipos.id_eqo}"/>"> <input type="submit" value="Modificar"/> </a></h5>
+                        <a href="<c:url value = "/getEquipo?id=${equipos.id}"/>"> <input type="submit" value="Modificar"/> </a></h5>
                 </td>
             </tr>
         </c:forEach>
