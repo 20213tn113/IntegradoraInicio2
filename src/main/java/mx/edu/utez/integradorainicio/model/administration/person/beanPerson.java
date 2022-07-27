@@ -3,13 +3,13 @@ package mx.edu.utez.integradorainicio.model.administration.person;
 
 public class beanPerson {
     private int id;
-    private String nombre;
+    private String name;
     private String user;
     private String pass;
 
-    public beanPerson(int id, String nombre, String user, String pass) {
+    public beanPerson(int id, String name, String user, String pass) {
         this.id = id;
-        this.nombre = nombre;
+        this.name = name;
         this.user = user;
         this.pass = pass;
     }
@@ -25,10 +25,10 @@ public class beanPerson {
         this.pass = pass;
     }
 
-    public beanPerson(String nombre, String user, String pass) {
+    public beanPerson(String name, String user, String pass) {
         this.user = user;
         this.pass = pass;
-        this.nombre = nombre;
+        this.name = name;
     }
     public beanPerson() {
 
@@ -38,8 +38,8 @@ public class beanPerson {
         this.id = id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setUser(String user) {
@@ -57,8 +57,8 @@ public class beanPerson {
         return id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
     public String getUser() {

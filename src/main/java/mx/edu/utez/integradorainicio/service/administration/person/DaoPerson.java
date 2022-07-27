@@ -22,7 +22,7 @@ public class DaoPerson {
             while (rs.next()) {
                 beanPerson user = new beanPerson();
                 user.setId(rs.getInt("iduser"));
-                user.setNombre(rs.getString("name"));
+                user.setName(rs.getString("name"));
                 user.setUser(rs.getString("user"));
                 user.setPass(rs.getString("pass"));
                 listPersons.add(user);
@@ -32,7 +32,7 @@ public class DaoPerson {
             logger.error(e.getMessage());
         }
         for (int i=0; i<=listPersons.size()-1;i++){
-            System.out.println(listPersons.get(i).getNombre());
+            System.out.println(listPersons.get(i).getName());
         }
         return listPersons;
 
@@ -73,7 +73,7 @@ public class DaoPerson {
             try (ResultSet rs = stm.executeQuery();) {
                 while (rs.next()) {
                     user.setId(rs.getInt("iduser"));
-                    user.setNombre(rs.getString("name"));
+                    user.setName(rs.getString("name"));
                     user.setUser(rs.getString("user"));
                     user.setPass(rs.getString("pass"));
 
@@ -96,7 +96,7 @@ public class DaoPerson {
             Connection con=conexionMysql2.getConnection();
             String sql="UPDATE usuarios_sesion SET name=?, user=?, pass=? WHERE iduser="+user.getId();
             PreparedStatement pstm=con.prepareStatement(sql);
-            pstm.setString(1,user.getNombre());
+            pstm.setString(1,user.getName());
             pstm.setString(2,user.getUser());
             pstm.setString(3,user.getPass());
 
@@ -136,7 +136,7 @@ public class DaoPerson {
     public boolean registrarUser(beanPerson user) {
         try (Connection con = conexionMysql2.getConnection()) {
             try (PreparedStatement pstm = con.prepareStatement("insert into usuarios_sesion(name,user,pass) values(?,?,?)")) {
-                pstm.setString(1, user.getNombre());
+                pstm.setString(1, user.getName());
                 pstm.setString(2, user.getUser());
                 pstm.setString(3, user.getPass());
                 return pstm.executeUpdate() == 1;

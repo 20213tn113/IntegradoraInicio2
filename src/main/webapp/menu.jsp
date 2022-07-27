@@ -31,7 +31,7 @@
         <h2 id="h12">MENÚ PRESTAMOS DE EQUIPO</h2>
     </div>
     <nav>
-        <a href="admin.jsp" class="nav-link">Atras</a>
+        <a href="admin.jsp" class="nav-link">Regresar</a>
         <a href="#" class="nav-link">Cerrar Sesión</a>
         <!-- <a href="#" class="nav-link">Horario</a> -->
         <select name="Horario" id="mot">

@@ -46,7 +46,7 @@ public class ServletEquiposSolicitar extends HttpServlet {
             case "/getEquipo":
                 String idEquipoString = request.getParameter("id_eqo")!=null?request.getParameter("id_eqo"):"0";
                 try {
-                    int idEquipo = Integer.parseInt(idEquipoString);
+                    String idEquipo = idEquipoString;
                     beanEquipos equipos = new DaoEquipos().obtenerEquipos(idEquipo);
                     request.setAttribute("equipos",equipos);
                     urlRedirect="updateEquipos.jsp";

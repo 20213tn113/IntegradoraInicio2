@@ -29,7 +29,7 @@
         <h2 id="h12" class="logo-nombre">Historial de Sancionados</h2>
     </div>
     <nav>
-        <a href="admin.jsp" class="nav-link" >Atras</a>
+        <a href="admin.jsp" class="nav-link" >Regresar</a>
         <a href="#" class="nav-link">Inicio</a>
     </nav>
 

@@ -11,6 +11,8 @@ public class beanEquipos {
     private String disponibilidad;
     private String estado;
 
+    private String id_eqo2;
+
     public beanEquipos(String id_eqo, String nombre, String descripcion, String marca, String modelo, String n_serie, String disponibilidad, String estado) {
         this.id_eqo = id_eqo;
         this.nombre = nombre;
@@ -22,6 +24,18 @@ public class beanEquipos {
         this.estado = estado;
     }
 
+
+    public beanEquipos(String id_eqo, String nombre, String descripcion, String marca, String modelo, String n_serie, String disponibilidad, String estado, String id_eqo2) {
+        this.id_eqo = id_eqo;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.n_serie = n_serie;
+        this.disponibilidad = disponibilidad;
+        this.estado = estado;
+        this.id_eqo2 = id_eqo2;
+    }
 
     public beanEquipos(){    }
 

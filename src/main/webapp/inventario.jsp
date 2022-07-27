@@ -91,7 +91,7 @@
                             <input type="submit" value="Eliminar"/>
                         </form>
 
-                        <a href="<c:url value = "/getEquipo?id=${equipos.id_eqo}"/>"> <input type="submit" value="Modificar"/> </a></h5>
+                        <a href="<c:url value = "/getEquipo?id_eqo=${equipos.id_eqo}"/>"> <input type="submit" value="Modificar"/> </a></h5>
                 </td>
             </tr>
         </c:forEach>
