@@ -115,4 +115,23 @@ public class DaoEquipos {
         return status;
     }
 
+
+    public boolean deleteEquipos (beanEquipos equipos1){
+        boolean status=false;
+        try{
+            Connection con=conexionMysql2.getConnection();
+            String sql="DELETE FROM equipos WHERE id="+equipos1.getId();
+            PreparedStatement pstm=con.prepareStatement(sql);
+            if(pstm.executeUpdate()==1){
+                status=true;
+            }
+            pstm.close();
+            con.close();
+        }catch(SQLException e){
+            logger.error(e.getMessage());
+        }
+
+        return  status;
+    }
+
 }

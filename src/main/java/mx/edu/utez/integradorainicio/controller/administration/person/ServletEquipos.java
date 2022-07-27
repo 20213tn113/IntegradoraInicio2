@@ -2,6 +2,7 @@ package mx.edu.utez.integradorainicio.controller.administration.person;
 
 import mx.edu.utez.integradorainicio.model.administration.person.beanEquipos;
 import mx.edu.utez.integradorainicio.service.administration.person.DaoEquipos;
+import mx.edu.utez.integradorainicio.service.administration.person.DaoPerson;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -19,7 +20,7 @@ public class ServletEquipos extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id;
+
         String id2;
         String id_eqo;
          String nombre;
@@ -79,6 +80,29 @@ public class ServletEquipos extends HttpServlet {
                 }else{
                     mensaje="Error al actualizar el Equipo!";
                     request.setAttribute("mensaje","Error al actualizar el usuario!");
+                    dispatcher =request.getRequestDispatcher("admin.jsp");
+                    request.getRequestDispatcher(mensaje);
+                }
+                doGet(request,response);
+                break;
+
+            case "eliminar":
+                idEquipoString  = request.getParameter("id")!=null?request.getParameter("id"):"0";
+                int id  = Integer.parseInt(idEquipoString);
+                beanEquipos equipos1=new beanEquipos();
+                equipos1.setId(id);
+                DaoEquipos daoEquipos=new DaoEquipos();
+
+                if(daoEquipos.deleteEquipos(equipos1)){
+                    mensaje="Usuario eliminado correctamente!";
+                    request.setAttribute("mensaje","Usuario eliminado correctamente!");
+                    System.out.println("El usuario ha sido eliminado");
+                    dispatcher =request.getRequestDispatcher("admin.jsp");
+                    request.getRequestDispatcher(mensaje);
+
+                }else{
+                    mensaje="Error al eliminar el usuario!";
+                    request.setAttribute("mensaje","Error al eliminar el usuario!");
                     dispatcher =request.getRequestDispatcher("admin.jsp");
                     request.getRequestDispatcher(mensaje);
                 }

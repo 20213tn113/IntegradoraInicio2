@@ -57,7 +57,7 @@
     <table border="1">
         <thead>
         <tr>
-            <th>#</th>
+
             <th>Id_Equipo</th>
             <th>Nombre</th>
             <th>Descripcion</th>
@@ -73,7 +73,7 @@
         <c:forEach var="equipos" items="${ListEquipos}" varStatus="status">
             <tr>
 
-                <td><c:out value="${equipos.id}"></c:out></td>
+
                 <td><c:out value="${equipos.id_eqo}"></c:out></td>
                 <td><c:out value="${equipos.nombre}"></c:out></td>
                 <td><c:out value="${equipos.descripcion}"></c:out></td>
@@ -85,7 +85,7 @@
 
                 <td>
                     <h5>
-                        <form action="ServletSesion" method="post">
+                        <form action="ServletEquipos" method="post">
                             <input type="hidden" value="eliminar" name="accion"/>
                             <input type="hidden" name="id" value="${equipos.id}"/>
                             <input type="submit" value="Eliminar"/>
