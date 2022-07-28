@@ -7,11 +7,14 @@ body{
 header{
     display: flex ;
     min-height: 30px;
-
+    align-items: center;
+    align-content: center;
+    width: 90%;
     background:linear-gradient(50deg, #ffffffad, #ffffffad,#ffffffab);
     background-color: rgb(255, 245, 245);
     justify-content: space-between;
     align-items: center;
+
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;

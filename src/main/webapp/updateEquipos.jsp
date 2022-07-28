@@ -16,25 +16,42 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="css/estilosheader.css">
+    <link rel="stylesheet" href="css/estilosUpdateEquipos.css">
 </head>
 <body>
 
-<form action="ServletEquipos" method="post">
-    <fieldset>
-        <legend>Actualización de usuario</legend>
-        <p><label>Id de Equipo:</label> <input type="text" name="id_eqo" value="${equipos.id_eqo}"/></p>
-        <p><label>Nombre:</label> <input type="text" name="nombre" value="${equipos.nombre}"/></p>
-        <p><label>Descripción:</label> <input type="text" name="descripcion" value="${equipos.descripcion}"/></p>
-        <p><label>Marca:</label> <input type="text" name="marca" value="${equipos.marca}"/></p>
-        <p><label>Modelo:</label> <input type="text" name="modelo" value="${equipos.modelo}"/></p>
-        <p><label>Numero de Serie:</label> <input type="text" name="n_serie" value="${equipos.n_serie}"/></p>
-        <p><label>Disponibilidad:</label> <input type="text" name="disponibilidad" value="${equipos.disponibilidad}"/></p>
-        <p><label>Estado de Equipo:</label> <input type="text" name="estado" value="${equipos.estado}"/></p>
-        <input type="hidden" value="actualizar" name="accion"/>
-        <input type="hidden" name="id" value="${equipos.id}"/>
-        <input type="submit" value="Actualizar Datos"/>
-    </fieldset>
-</form>
+<header>
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Logo-utez.png/300px-Logo-utez.png"
+             alt="">
+        <h2 id="h12">MODIFICAR EQUIPO</h2>
+    </div>
+    <nav>
+        <a href="admin.jsp" class="nav-link">Regresar</a>
+    </nav>
+</header>
+
+<div class="principal">
+
+    <form action="ServletEquipos" method="post">
+        <fieldset>
+            <legend>Actualización de usuario</legend>
+            <p><label>Id de Equipo:</label> <input type="text" name="id_eqo" value="${equipos.id_eqo}"/></p>
+            <p><label>Nombre:</label> <input type="text" name="nombre" value="${equipos.nombre}"/></p>
+            <p><label>Descripción:</label> <input type="text" name="descripcion" value="${equipos.descripcion}"/></p>
+            <p><label>Marca:</label> <input type="text" name="marca" value="${equipos.marca}"/></p>
+            <p><label>Modelo:</label> <input type="text" name="modelo" value="${equipos.modelo}"/></p>
+            <p><label>Numero de Serie:</label> <input type="text" name="n_serie" value="${equipos.n_serie}"/></p>
+            <p><label>Disponibilidad:</label> <input type="text" name="disponibilidad" value="${equipos.disponibilidad}"/></p>
+            <p><label>Estado de Equipo:</label> <input type="text" name="estado" value="${equipos.estado}"/></p>
+            <input type="hidden" value="actualizar" name="accion"/>
+            <input type="hidden" name="id" value="${equipos.id}"/>
+            <input class="boton" type="submit" value="Actualizar Datos"/>
+        </fieldset>
+    </form>
+</div>
+
 </body>
 </html>
 <% }else{

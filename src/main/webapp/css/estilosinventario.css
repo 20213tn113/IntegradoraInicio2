@@ -52,3 +52,29 @@ table{
     background-color: white;
     width: 98%;
 }
+
+
+
+.boton{
+    background-color: #038c65;
+    display:inline-block;
+    background-color: #022859;
+    border-radius: 10px;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+    padding:10px 20px;
+    line-height:normal;
+    margin: 5px;
+    font-size:15px;
+    font-weight:bold;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+}
+
+.boton:hover {
+    background:#03A678;
+    border-radius:50px;
+    color: rgb(255, 255, 255);
+}
+

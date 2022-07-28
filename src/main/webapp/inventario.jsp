@@ -27,13 +27,9 @@
 <html>
 <head>
         <title>Inventario</title>
-
-
-
     <link rel="stylesheet" href="css/estilosinventario.css">
 
     <link rel="stylesheet" href="css/estilosheader.css ">
-
 
 </head>
 <body>
@@ -88,10 +84,10 @@
                         <form action="ServletEquipos" method="post">
                             <input type="hidden" value="eliminar" name="accion"/>
                             <input type="hidden" name="id" value="${equipos.id}"/>
-                            <input type="submit" value="Eliminar"/>
+                            <input class="boton" type="submit" value="Eliminar"/>
                         </form>
 
-                        <a href="<c:url value = "/getEquipo?id=${equipos.id}"/>"> <input type="submit" value="Modificar"/> </a></h5>
+                        <a class="boton" href="<c:url value = "/getEquipo?id=${equipos.id}"/>"> <input class="boton" type="submit" value="Modificar"/> </a></h5>
                 </td>
             </tr>
         </c:forEach>

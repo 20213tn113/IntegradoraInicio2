@@ -32,7 +32,7 @@
     </div>
     <nav>
         <a href="admin.jsp" class="nav-link">Regresar</a>
-        <a href="#" class="nav-link">Cerrar Sesión</a>
+        <a href="cerrarSesion" class="nav-link">Cerrar Sesión</a>
         <!-- <a href="#" class="nav-link">Horario</a> -->
         <select name="Horario" id="mot">
             <option value="p">Horario</option>

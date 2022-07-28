@@ -33,7 +33,7 @@
         <nav>
 
 
-            <%--@declare id="country"--%><a href="#" class="nav-link">Cerrar Sesión</a>
+            <%--@declare id="country"--%><a href="cerrarSesion" class="nav-link">Cerrar Sesión</a>
             <!-- <a href="#" class="nav-link">Horario</a> -->
             <label for="country" class="form-label"></label>
 

@@ -47,6 +47,7 @@ public class DaoPerson {
             ps.setString(2,usuario.getPass());
 
 
+
             ResultSet res= ps.executeQuery();
             if(res.next()){
                 login=new beanPerson(res.getInt("iduser"),

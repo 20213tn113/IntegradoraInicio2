@@ -30,7 +30,7 @@
     </div>
     <nav>
         <a href="admin.jsp" class="nav-link" >Regresar</a>
-        <a href="#" class="nav-link">Inicio</a>
+
     </nav>
 
 </header>
