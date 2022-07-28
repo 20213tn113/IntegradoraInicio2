@@ -72,8 +72,8 @@ public class ServletEquipos extends HttpServlet {
                 equipos = new beanEquipos(idEquipos,id_eqo,nombre,descripcion,marca,modelo,n_serie,disponibilidad,estado);
 
                 if(new DaoEquipos().updateEquipos(equipos)){
-                    mensaje="Usuario actualizado correctamente!";
-                    request.setAttribute("mensaje","Usuario actualizado correctamente!");
+                    mensaje="Equipo actualizado correctamente!";
+                    request.setAttribute("mensaje","Equipo actualizado correctamente!");
                     System.out.println("El Equipo ha sido modificado");
                     dispatcher =request.getRequestDispatcher("admin.jsp");
                     request.getRequestDispatcher(mensaje);

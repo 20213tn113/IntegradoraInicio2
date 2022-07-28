@@ -17,7 +17,7 @@
 
     <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.esm.min.js.map"></script>
 
-    <link rel="stylesheet" href="css/headerestilo2.css">
+    <link rel="stylesheet" href="css/estilosSanciones.css">
 
     <link rel="stylesheet" href="css/estilosheader.css">
 
@@ -38,9 +38,10 @@
 <div>
     <html>
 
-    <form>Busqueda: <input id="txtBusqueda" type="text" onkeyup="Buscar();" /></form>
 
-    <table id="reservas">
+    <form >Busqueda:<input id="txtBusqueda2" type="text" onkeyup="Buscar();" /></form>
+
+    <table id="reservas" >
         <tbody>
         <tr>
             <th id="tdfecha">Fecha</th>

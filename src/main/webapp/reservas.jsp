@@ -20,7 +20,7 @@
 
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="css/headerestilo2.css">
+    <link rel="stylesheet" href="css/estilosSanciones.css">
 
 
     <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.esm.min.js.map"></script>
@@ -47,9 +47,9 @@
 <div>
     <html>
 
-    <form>Busqueda: <input id="txtBusqueda" type="text" onkeyup="Buscar();" /></form>
+    <form> Busqueda: <input id="txtBusqueda" type="text" onkeyup="Buscar();" /></form>
     <table id="reservas">
-        <tbody>
+
         <tr>
             <th>Fecha</th>
             <th>Correo</th>
@@ -102,7 +102,7 @@
             <td>www.microsoft.com</td>
             <td><input type="button" value="Eliminar" /></td>
         </tr>
-        </tbody>
+
     </table>
     <script type="text/javascript">// < ![CDATA[
     function Eliminar(i) {

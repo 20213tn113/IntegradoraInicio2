@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/estilos.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="css/headerestilo2.css">
+    <link rel="stylesheet" href="css/estilosSanciones.css">
     <link rel="stylesheet" href="css/menuestilo2.css">
     <link rel="stylesheet" href="css/estilos.css">
     <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.esm.min.js.map"></script>
