@@ -25,10 +25,10 @@
     <div class="logo">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Logo-utez.png/300px-Logo-utez.png"
              alt="">
-        <h2 id="h12">MODIFICAR EQUIPO</h2>
+        <h2 id="h12">AGREGAR EQUIPO</h2>
     </div>
     <nav>
-        <a href="admin.jsp" class="nav-link">Regresar</a>
+        <a href="getEquipos" class="nav-link">Regresar</a>
     </nav>
 </header>
 
@@ -38,7 +38,7 @@
 
     <form action="ServletEquipos" method="post">
         <fieldset>
-            <legend>Actualización de usuario</legend>
+            <legend>Agregar nuevo equipo</legend>
             <p><label>Id de Equipo:</label> <input type="text" name="id_eqo" /></p>
             <p><label>Nombre:</label> <input type="text" name="nombre" /></p>
             <p><label>Descripción:</label> <input type="text" name="descripcion" /></p>

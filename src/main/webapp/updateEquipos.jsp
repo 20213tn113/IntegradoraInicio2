@@ -29,7 +29,7 @@
         <h2 id="h12">MODIFICAR EQUIPO</h2>
     </div>
     <nav>
-        <a href="admin.jsp" class="nav-link">Regresar</a>
+        <a href="getEquipos" class="nav-link">Regresar</a>
     </nav>
 </header>
 
@@ -37,7 +37,7 @@
 
     <form action="ServletEquipos" method="post">
         <fieldset>
-            <legend>Actualización de usuario</legend>
+            <legend>Actualización de Equipo</legend>
             <p><label>Id de Equipo:</label> <input type="text" name="id_eqo" value="${equipos.id_eqo}"/></p>
             <p><label>Nombre:</label> <input type="text" name="nombre" value="${equipos.nombre}"/></p>
             <p><label>Descripción:</label> <input type="text" name="descripcion" value="${equipos.descripcion}"/></p>
