@@ -134,4 +134,31 @@ public class DaoEquipos {
         return  status;
     }
 
+
+    public boolean registrarEquipos(beanEquipos equipos) {
+        try (Connection con = conexionMysql2.getConnection()) {
+            try (PreparedStatement pstm = con.prepareStatement("insert into equipos(id_eqo,nombre,descripcion,marca,modelo,n_serie,disponibilidad,estado) values(?,?,?,?,?,?,?,?)")) {
+
+                pstm.setString(1, equipos.getId_eqo());
+                pstm.setString(2,equipos.getNombre());
+                pstm.setString(3,equipos.getDescripcion());
+                pstm.setString(4,equipos.getMarca());
+                pstm.setString(5,equipos.getModelo());
+                pstm.setString(6,equipos.getN_serie());
+                pstm.setString(7, equipos.getDisponibilidad());
+                pstm.setString(8,equipos.getEstado());
+
+                return pstm.executeUpdate() == 1;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+
+
 }

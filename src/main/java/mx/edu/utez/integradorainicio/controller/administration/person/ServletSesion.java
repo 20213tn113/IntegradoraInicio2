@@ -34,9 +34,13 @@ public class ServletSesion extends HttpServlet {
                 usuario = new beanPerson(request.getParameter("user"), request.getParameter("pass"));
                 DaoPerson daoUsuario=new DaoPerson();
                 usuario=daoUsuario.consultaLogin(usuario);
-                System.out.println(request.getParameter("user"));
-                System.out.println(request.getParameter("pass"));
-                System.out.println(request.getParameter("name"));
+
+                System.out.println("ID2:"+request.getParameter("iduser"));
+                System.out.println("User: "+request.getParameter("user"));
+                System.out.println("Pass: "+ request.getParameter("pass"));
+                System.out.println("Name: "+usuario.getName());
+
+
                 if(usuario !=null){
                     sesionLogin.setAttribute("user", usuario.getUser());
                     sesionLogin.setAttribute("pass",usuario.getPass());

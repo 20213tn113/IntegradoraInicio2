@@ -44,6 +44,7 @@
     </div>
     <nav>
         <a href="admin.jsp" class="nav-link" >Regresar</a>
+        <a href="insertEquipo.jsp" class="nav-link" >Agregar Equipo</a>
     </nav>
 </header>
 

@@ -109,6 +109,41 @@ public class ServletEquipos extends HttpServlet {
                 doGet(request,response);
                 break;
 
+
+            case "registrar":
+
+                id_eqo=request.getParameter("id_eqo");
+                nombre=request.getParameter("nombre");
+                descripcion=request.getParameter("descripcion");
+                marca=request.getParameter("marca");
+                modelo=request.getParameter("modelo");
+                n_serie=request.getParameter("n_serie");
+                disponibilidad=request.getParameter("disponibilidad");
+                estado=request.getParameter("estado");
+
+
+                System.out.println("id_eqo: " + id_eqo );
+                System.out.println("nombre: " + nombre );
+                System.out.println("estado: " + estado);
+
+                equipos=new beanEquipos(id_eqo,nombre,descripcion,marca,modelo,n_serie,disponibilidad,estado);
+                if (new DaoEquipos().registrarEquipos(equipos)){
+                    mensaje="Equipo registrado correctamente!";
+                    request.setAttribute("mensaje","Equipo registrado correctamente!");
+                    System.out.println("El Equipo ha sido registrado");
+                    dispatcher =request.getRequestDispatcher("admin.jsp");
+                    request.getRequestDispatcher(mensaje);
+                }else{
+                    mensaje="Error al registrar el Equipo!";
+                    request.setAttribute("mensaje","Error al registrar el Equipo!");
+                    dispatcher =request.getRequestDispatcher("admin.jsp");
+                    request.getRequestDispatcher(mensaje);
+                }
+                doGet(request,response);
+                break;
+
+
+
             default:
                 break;
 

@@ -43,19 +43,18 @@ public class DaoPerson {
             Connection con= conexionMysql2.getConnection();
             String sqlLogin="SELECT * FROM usuarios_sesion WHERE user=? AND pass=?;";
             PreparedStatement ps=con.prepareStatement(sqlLogin);
+
             ps.setString(1,usuario.getUser());
             ps.setString(2,usuario.getPass());
 
-
-
             ResultSet res= ps.executeQuery();
             if(res.next()){
-                login=new beanPerson(res.getInt("iduser"),
-                        res.getString("user"), res.getString("pass"), res.getString("name"));
-                System.out.println(res.getInt("iduser"));
-                System.out.println(res.getString("user"));
-                System.out.println(res.getString("pass"));
-                System.out.println(res.getString("name"));
+                login=new beanPerson(res.getInt("iduser"),res.getString("name"),
+                        res.getString("user"), res.getString("pass"));
+                System.out.println("ID:"+res.getInt("iduser"));
+                System.out.println("User: "+res.getString("user"));
+                System.out.println("Pass: "+ res.getString("pass"));
+                System.out.println("Name: "+res.getString("name"));
             }
         }catch(Exception e){
             e.printStackTrace();
