@@ -75,7 +75,7 @@
     <div>
         <P id="div1">IPAD</P>
         <img id="img1"
-             src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-ipad-wifi-spacegray-2018?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1582321442322"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZJciH7cM83hw35SuVyyrJ4KdjeadcCRBw7g&usqp=CAU"
              alt="">
         <p id="div2">CANTIDAD DISPONIBLE</p>
         <p id="div3">UNIDADES</p>
@@ -141,9 +141,7 @@
     </div>
     <div>
         <P id="div1">VIDEO PROYECTOR DIGITAL</P>
-        <img id="img1"
-             src="https://mainframeltda.com/wp-content/uploads/2019/04/Que_es_un_proyector_de_video-1100x825.jpg"
-             alt="">
+        <img id="img1" src="img/proyectordigital.png "alt="">
         <p id="div2">CANTIDAD DISPONIBLE</p>
         <p id="div3">UNIDADES</p>
         <p id="div4">Solicítalo</p>

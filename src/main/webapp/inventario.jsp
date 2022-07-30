@@ -52,6 +52,15 @@
     <h4>${mensaje}</h4>
 </div>
 
+<div class="acciones">
+
+    <label>Id de Equipo:</label> <input type="text" name="id_eqo" />
+
+
+</div>
+
+
+
 <div id="divScroll">
 
 
