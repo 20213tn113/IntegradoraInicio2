@@ -80,5 +80,39 @@ table{
 
 
 .acciones{
-    padding: 5px;
+    padding-left: 2%;
+}
+
+#text1{
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 90%;
+}
+input#input2 {
+    width: 40%;
+}
+
+
+.boton2{
+
+    display:inline-block;
+    background-color: #022859;
+    border-radius: 10px;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+    padding:7px 11px;
+    line-height:normal;
+    font-size:13px;
+    font-weight:bold;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+}
+
+.boton2:hover {
+    background:#03A678;
+    border-radius:50px;
+    color: rgb(255, 255, 255);
 }

@@ -18,6 +18,8 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/estilosheader.css">
     <link rel="stylesheet" href="css/estilosInsertEquipo.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
 </head>
 <body>
 
@@ -36,23 +38,45 @@
 
 <div class="principal">
 
-    <form action="ServletEquipos" method="post">
+
         <fieldset>
             <legend>Agregar nuevo equipo</legend>
-            <p><label>Id de Equipo:</label> <input type="text" name="id_eqo" /></p>
-            <p><label>Nombre:</label> <input type="text" name="nombre" /></p>
-            <p><label>Descripción:</label> <input type="text" name="descripcion" /></p>
-            <p><label>Marca:</label> <input type="text" name="marca" /></p>
-            <p><label>Modelo:</label> <input type="text" name="modelo" /></p>
-            <p><label>Numero de Serie:</label> <input type="text" name="n_serie" /></p>
-            <p><label>Disponibilidad:</label> <input type="text" name="disponibilidad"/></p>
-            <p><label>Estado de Equipo:</label> <input type="text" name="estado" /></p>
+            <p><label>Id de Equipo:</label> <input type="text" name="id_eqo" id="id_eqo" /></p>
+            <p><label>Nombre:</label> <input type="text" name="nombre" id="nombre"/></p>
+            <p><label>Descripción:</label> <input type="text" name="descripcion" id="descripcion" /></p>
+            <p><label>Marca:</label> <input type="text" name="marca" id="marca" /></p>
+            <p><label>Modelo:</label> <input type="text" name="modelo"  id="modelo"/></p>
+            <p><label>Numero de Serie:</label> <input type="text" name="n_serie" id="n_serie"/></p>
+            <p><label>Disponibilidad:</label>
+                <select name="disponibilidad" id="disponibilidad">
+                    <option value="S">Si disponible</option>
+                    <option value="N">NO disponible</option>
+                </select>
+            </p>
+
+            <p><label>Estado:</label>
+                <select name="estado" id="estado">
+                    <option value="F">Funcional</option>
+                    <option value="N">No Funcional</option>
+                </select>
+            </p>
+
+
 
             <input type="hidden" value="registrar" name="accion">
-            <input type="submit" value="Registrar Equipo"/>
+            <input id="insertEquipos" class="boton" type="submit" value="Registrar Equipo" onclick="insertarEquipos()"/>
         </fieldset>
-    </form>
+
 </div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/accionesInsertEquipo.js"></script>
+<script src="js/sweetalert2.all.min.js"></script>
+
+
 </body>
 </html>
 

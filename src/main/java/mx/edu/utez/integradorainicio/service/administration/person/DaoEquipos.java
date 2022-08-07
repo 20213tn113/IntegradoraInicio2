@@ -41,13 +41,6 @@ public class DaoEquipos {
             logger.error(e.getMessage());
         }
 
-        for (int i=0; i<=ListEquipos.size()-1;i++){
-            System.out.println(ListEquipos.get(i).getId());
-        }
-
-        for (int i=0; i<=ListEquipos.size()-1;i++){
-            System.out.println(ListEquipos.get(i).getNombre());
-        }
         return ListEquipos;
 
     }

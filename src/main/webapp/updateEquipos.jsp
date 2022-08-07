@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Lenovo
@@ -19,6 +20,8 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/estilosheader.css">
     <link rel="stylesheet" href="css/estilosUpdateEquipos.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
 </head>
 <body>
 
@@ -35,23 +38,82 @@
 
 <div class="principal">
 
-    <form action="ServletEquipos" method="post">
+
         <fieldset>
             <legend>Actualización de Equipo</legend>
-            <p><label>Id de Equipo:</label> <input type="text" name="id_eqo" value="${equipos.id_eqo}"/></p>
-            <p><label>Nombre:</label> <input type="text" name="nombre" value="${equipos.nombre}"/></p>
-            <p><label>Descripción:</label> <input type="text" name="descripcion" value="${equipos.descripcion}"/></p>
-            <p><label>Marca:</label> <input type="text" name="marca" value="${equipos.marca}"/></p>
-            <p><label>Modelo:</label> <input type="text" name="modelo" value="${equipos.modelo}"/></p>
-            <p><label>Numero de Serie:</label> <input type="text" name="n_serie" value="${equipos.n_serie}"/></p>
-            <p><label>Disponibilidad:</label> <input type="text" name="disponibilidad" value="${equipos.disponibilidad}"/></p>
-            <p><label>Estado de Equipo:</label> <input type="text" name="estado" value="${equipos.estado}"/></p>
+            <p><label>Id de Equipo: </label> <input type="text" id="id_eqo" name="id_eqo" value="${equipos.id_eqo}"/></p>
+            <p><label>Nombre: </label> <input type="text" id="nombre" name="nombre" value="${equipos.nombre}"/></p>
+            <p><label>Descripción: </label> <input type="text" id="descripcion" name="descripcion" value="${equipos.descripcion}"/></p>
+            <p><label>Marca: </label> <input type="text" id="marca" name="marca" value="${equipos.marca}"/></p>
+            <p><label>Modelo: </label> <input type="text" id="modelo" name="modelo" value="${equipos.modelo}"/></p>
+            <p><label>Numero de Serie: </label> <input type="text"  id="n_serie" name="n_serie" value="${equipos.n_serie}"/></p>
+
+            <p><label>Disponibilidad: </label>
+                <select id="disponibilidad" name="disponibilidad">
+
+                <option
+                        <c:choose>
+                            <c:when test="${equipos.disponibilidad=='S'}">
+                                selected
+
+                            </c:when>
+                        </c:choose>
+                        value="S">SI</option>
+
+                <option
+                        <c:choose>
+                            <c:when test="${equipos.disponibilidad=='N'}">
+                                selected
+
+                            </c:when>
+                        </c:choose>
+                        value="N">NO</option>
+
+            </select></p>
+
+
+            <p><label>Estado de Equipo:  </label>
+
+                <select id="estado" name="estado">
+
+                    <option
+                            <c:choose>
+                                <c:when test="${equipos.estado=='F'}">
+                                    selected
+
+                                </c:when>
+                            </c:choose>
+                            value="F">Funcional</option>
+
+                    <option
+                            <c:choose>
+                                <c:when test="${equipos.estado=='N'}">
+                                    selected
+
+                                </c:when>
+                            </c:choose>
+                            value="N">NO Funcional</option>
+
+                </select>
+            </p>
+
             <input type="hidden" value="actualizar" name="accion"/>
-            <input type="hidden" name="id" value="${equipos.id}"/>
-            <input class="boton" type="submit" value="Actualizar Datos"/>
+            <input type="hidden" id="id" name="id" value="${equipos.id}"/>
+
+            <input id="updateEquipos" class="boton" type="button" onclick="modificarEquipos()" value="Actualizar Datos">
+
         </fieldset>
-    </form>
+
 </div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/accionesUpdateEquipo.js"></script>
+<script src="js/sweetalert2.all.min.js"></script>
+
+
+
 
 </body>
 </html>

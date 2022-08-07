@@ -46,7 +46,7 @@ public class ServletSesion extends HttpServlet {
                     sesionLogin.setAttribute("pass",usuario.getPass());
                     sesionLogin.setAttribute("id",usuario.getId());
                     sesionLogin.setAttribute("name", usuario.getName());
-                    mensaje="Bienvenido al sistema " + usuario.getName();
+                    mensaje="Bienvenido al sistema: " + usuario.getName();
                     dispatcher =request.getRequestDispatcher("admin.jsp");
 
                 }else{

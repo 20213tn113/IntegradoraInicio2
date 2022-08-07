@@ -71,13 +71,13 @@
             <td>13/junio/2022</td>
             <td>https://www.google.com.co</td>
             <td>Larry Page</td>
-            <td><input type="button" value="Eliminar" /></td>
+            <td><input class="boton2" type="button" value="Eliminar" /></td>
         </tr>
         <tr>
             <td>13/junio/2022</td>
             <td>https://www.paypal.com</td>
             <td>Peter Thiel</td>
-            <td><input type="button" value="Eliminar" /></td>
+            <td><input class="boton2" type="button" value="Eliminar" /></td>
         </tr>
         <tr class="alt">
             <td>13/junio/2022</td>

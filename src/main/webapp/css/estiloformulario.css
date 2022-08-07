@@ -19,24 +19,13 @@
     clear: both;
 
 }
-body{
-    font-family: sans-serif;
-    margin: 0;
-}
 
-.logo{
-    display: flex;
-    align-items: center;
-}
 
-.logo img{
-    height: 60px;
-    margin-right: 30px;
-}
+
+
 
 #h12{
     background: linear-gradient(30deg,black, #022859,#038c65, #03a678, #023059, black);
     -webkit-background-clip: text;
-    color: transparent;
     font-size: 20px;
 }

@@ -50,6 +50,7 @@ public class ServletEquiposSolicitar extends HttpServlet {
                     System.out.println("LLEGO EL ID: "+idEquipo);
                     beanEquipos equipos = new DaoEquipos().obtenerEquipos(idEquipo);
                     request.setAttribute("equipos",equipos);
+
                     urlRedirect="updateEquipos.jsp";
                 }catch (Exception e){
                     urlRedirect="/getEquipos";

@@ -28,11 +28,9 @@
 <head>
         <title>Inventario</title>
 
-
-
     <link rel="stylesheet" href="css/estilosinventario.css">
-
     <link rel="stylesheet" href="css/estilosheader.css ">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
 
 </head>
@@ -44,7 +42,7 @@
     </div>
     <nav>
         <a href="admin.jsp" class="nav-link" >Regresar</a>
-        <a href="insertEquipo.jsp" class="nav-link" >Agregar Equipo</a>
+
     </nav>
 </header>
 
@@ -54,8 +52,9 @@
 
 <div class="acciones">
 
-    <label>Id de Equipo:</label> <input type="text" name="id_eqo" />
+    <a href="insertEquipo.jsp" class="boton2" > Agregar Equipo</a>
 
+    <label id="text1">  Buscar:</label>   <input type="text" class="form-control pull-right" style="width:20%" id="search" placeholder="Ingrese un dato...">
 
 </div>
 
@@ -64,7 +63,7 @@
 <div id="divScroll">
 
 
-    <table border="1">
+    <table border="1" id="mytable">
         <thead>
         <tr>
 
@@ -80,6 +79,8 @@
         </tr>
         </thead>
         <tbody>
+
+
         <c:forEach var="equipos" items="${ListEquipos}" varStatus="status">
             <tr>
 
@@ -90,18 +91,44 @@
                 <td><c:out value="${equipos.marca}"></c:out></td>
                 <td><c:out value="${equipos.modelo}"></c:out></td>
                 <td><c:out value="${equipos.n_serie}"></c:out></td>
-                <td><c:out value="${equipos.disponibilidad}"></c:out></td>
-                <td><c:out value="${equipos.estado}"></c:out></td>
+                <td>
+                    <c:choose>
+                        <c:when test="${equipos.disponibilidad=='S'}">
+                            Si
+
+                        </c:when>
+                        <c:otherwise>
+                            No
+
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+
+                <td>
+                    <c:choose>
+                        <c:when test="${equipos.estado=='F'}">
+                            Funcional
+
+                        </c:when>
+                        <c:otherwise>
+                            No Funcional
+
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+
 
                 <td>
                     <h5>
-                        <form action="ServletEquipos" method="post">
+
                             <input type="hidden" value="eliminar" name="accion"/>
-                            <input type="hidden" name="id" value="${equipos.id}"/>
-                            <input class="boton" type="submit" value="Eliminar"/>
-                        </form>
+                            <input type="hidden" id="id" name="id" value="${equipos.id}"/>
+                            <input id="deleteUser" class="boton" type="button" onclick="validarEliminar()" value="Eliminar">
+
+
 
                         <a href="<c:url value = "/getEquipo?id=${equipos.id}"/>"> <input class="boton" type="submit" value="Modificar"/> </a></h5>
+
                 </td>
             </tr>
         </c:forEach>
@@ -111,7 +138,31 @@
 </div>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+<!--Escrip de busqueda dinamica -->
+
+<script>
+    // Write on keyup event of keyword input element
+    $(document).ready(function(){
+        $("#search").keyup(function(){
+            _this = this;
+            // Show only matching TR, hide rest of them
+            $.each($("#mytable tbody tr"), function() {
+                var conta;
+                if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+                    $(this).hide();
+                else
+                    $(this).show();
+            });
+        });
+    });
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/accionesInventario.js"></script>
+<script src="js/sweetalert2.all.min.js"></script>
 
 
 

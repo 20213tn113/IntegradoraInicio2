@@ -57,16 +57,6 @@ public class ServletEquipos extends HttpServlet {
 
                 int idEquipos = Integer.parseInt(idEquipoString);
 
-                System.out.println("ID PRUEBA: "+id2);
-                System.out.println("IdEquipos que llego: "+idEquipos);
-                System.out.println("Actualiza id_eqo: "+id_eqo);
-                System.out.println("Actualiza nombre: "+nombre);
-                System.out.println("Actualiza descripcion: "+descripcion);
-                System.out.println("Actualiza marca: "+marca);
-                System.out.println("Actualiza modelo: "+modelo);
-                System.out.println("Actualiza n_serie: "+n_serie);
-                System.out.println("Actualiza disponibilidad: "+disponibilidad);
-                System.out.println("Actualiza estado: "+estado);
 
 
                 equipos = new beanEquipos(idEquipos,id_eqo,nombre,descripcion,marca,modelo,n_serie,disponibilidad,estado);
@@ -121,10 +111,6 @@ public class ServletEquipos extends HttpServlet {
                 disponibilidad=request.getParameter("disponibilidad");
                 estado=request.getParameter("estado");
 
-
-                System.out.println("id_eqo: " + id_eqo );
-                System.out.println("nombre: " + nombre );
-                System.out.println("estado: " + estado);
 
                 equipos=new beanEquipos(id_eqo,nombre,descripcion,marca,modelo,n_serie,disponibilidad,estado);
                 if (new DaoEquipos().registrarEquipos(equipos)){
