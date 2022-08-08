@@ -10,6 +10,18 @@ function modificarEquipos() {
     var disponibilidad = document.getElementById("disponibilidad").value;
     var estado = document.getElementById("estado").value;
 
+
+    //Conversion a mayusculas
+
+    id_eqo = id_eqo.toUpperCase();
+    nombre = nombre.toUpperCase();
+    descripcion = descripcion.toUpperCase();
+    marca = marca.toUpperCase();
+    modelo = modelo.toUpperCase();
+    n_serie = n_serie.toUpperCase();
+    disponibilidad = disponibilidad.toUpperCase();
+    estado = estado.toUpperCase();
+
     if(nombre =="" || id_eqo =="" || descripcion =="" || marca =="" || modelo =="" || n_serie ==""){
 
         Swal.fire({

@@ -80,6 +80,7 @@ public class ServletEquipos extends HttpServlet {
                 idEquipoString  = request.getParameter("id")!=null?request.getParameter("id"):"0";
                 int id  = Integer.parseInt(idEquipoString);
                 beanEquipos equipos1=new beanEquipos();
+                System.out.println("ID LLEGO: "+id);
                 equipos1.setId(id);
                 DaoEquipos daoEquipos=new DaoEquipos();
 
@@ -113,7 +114,7 @@ public class ServletEquipos extends HttpServlet {
 
 
                 equipos=new beanEquipos(id_eqo,nombre,descripcion,marca,modelo,n_serie,disponibilidad,estado);
-                if (new DaoEquipos().registrarEquipos(equipos)){
+                if (new DaoEquipos().registrarEquipos(equipos) ==true ){
                     mensaje="Equipo registrado correctamente!";
                     request.setAttribute("mensaje","Equipo registrado correctamente!");
                     System.out.println("El Equipo ha sido registrado");

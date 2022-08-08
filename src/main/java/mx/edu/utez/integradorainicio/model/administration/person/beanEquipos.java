@@ -39,6 +39,8 @@ public class beanEquipos {
 
 
 
+
+
     public beanEquipos(){    }
 
     public void setId(int id) {

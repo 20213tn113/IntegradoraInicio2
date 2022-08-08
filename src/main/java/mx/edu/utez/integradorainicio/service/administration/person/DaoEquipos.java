@@ -132,7 +132,7 @@ public class DaoEquipos {
         try (Connection con = conexionMysql2.getConnection()) {
             try (PreparedStatement pstm = con.prepareStatement("insert into equipos(id_eqo,nombre,descripcion,marca,modelo,n_serie,disponibilidad,estado) values(?,?,?,?,?,?,?,?)")) {
 
-                pstm.setString(1, equipos.getId_eqo());
+                pstm.setString(1,equipos.getId_eqo());
                 pstm.setString(2,equipos.getNombre());
                 pstm.setString(3,equipos.getDescripcion());
                 pstm.setString(4,equipos.getMarca());
@@ -142,12 +142,16 @@ public class DaoEquipos {
                 pstm.setString(8,equipos.getEstado());
 
                 return pstm.executeUpdate() == 1;
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
         return false;
     }
 

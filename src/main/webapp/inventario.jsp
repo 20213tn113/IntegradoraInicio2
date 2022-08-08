@@ -123,7 +123,7 @@
 
                             <input type="hidden" value="eliminar" name="accion"/>
                             <input type="hidden" id="id" name="id" value="${equipos.id}"/>
-                            <input id="deleteUser" class="boton" type="button" onclick="validarEliminar()" value="Eliminar">
+                            <input id="deleteUser" class="boton" type="button" onclick="validarEliminar(${equipos.id})" value="Eliminar">
 
 
 
