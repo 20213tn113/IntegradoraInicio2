@@ -1,5 +1,6 @@
 body{
-    background-color: #038c65;
+    background: linear-gradient(40deg, #022859, #038c65, #03a678, #023059);
+    height: 721px;
 }
 .contenedor {
     border: 1px solid black;
@@ -33,7 +34,10 @@ body{
     height: 2em;
     width: 2em;
 }
-
+th{
+    background-color: #023059;
+    color: white;
+}
 
 #divScroll {
     overflow:scroll;
@@ -115,4 +119,38 @@ input#input2 {
     background:#03A678;
     border-radius:50px;
     color: rgb(255, 255, 255);
+}
+
+
+.boton4{
+    display:inline-block;
+    background-color: #022859;
+    border-radius: 10px;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+    padding:10px 20px;
+    line-height:normal;
+    margin: 5px;
+    font-size:15px;
+    font-weight:bold;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+}
+
+
+
+.boton4:hover {
+    background:#03A678;
+    border-radius:50px;
+    color: rgb(255, 255, 255);
+}
+
+@media(max-width:700px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 20px 0px;
+    }
 }

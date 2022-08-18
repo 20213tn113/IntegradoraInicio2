@@ -1,5 +1,6 @@
 body{
-    background-color: #038c65;
+    background: linear-gradient(40deg, #022859, #038c65, #03a678, #023059);
+    height: 721px;
 }
 .boton{
     background-color: #038c65;
@@ -30,9 +31,10 @@ body{
     margin-top: 3%;
     margin-left: 5%;
 }
-
 fieldset{
     background-color: white;
+    border: outset;
+    border-color: #5204ff;
 }
 legend {
     background-color: white;

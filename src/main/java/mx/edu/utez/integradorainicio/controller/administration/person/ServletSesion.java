@@ -22,6 +22,7 @@ public class ServletSesion extends HttpServlet {
         String user;
         String idPersonString;
         String mensaje="";
+        String validar ="";
         String clase="";
         String peticion=request.getParameter("accion");
         RequestDispatcher dispatcher=null;
@@ -38,7 +39,7 @@ public class ServletSesion extends HttpServlet {
                 System.out.println("ID2:"+request.getParameter("iduser"));
                 System.out.println("User: "+request.getParameter("user"));
                 System.out.println("Pass: "+ request.getParameter("pass"));
-                System.out.println("Name: "+usuario.getName());
+                //System.out.println("Name: "+usuario.getName());
 
 
                 if(usuario !=null){
@@ -47,16 +48,22 @@ public class ServletSesion extends HttpServlet {
                     sesionLogin.setAttribute("id",usuario.getId());
                     sesionLogin.setAttribute("name", usuario.getName());
                     mensaje="Bienvenido al sistema: " + usuario.getName();
+                    validar = "T";
                     dispatcher =request.getRequestDispatcher("admin.jsp");
+                    request.getRequestDispatcher(mensaje);
+
 
                 }else{
                     System.out.println("No se encontró en la BD!");
                     mensaje = "Datos incorrectos, verifica tu usuario y/o contraseña.";
                     clase="alert alert-danger";
                     dispatcher=request.getRequestDispatcher("admin.jsp");
+                    validar="F";
                     request.getRequestDispatcher(mensaje);
 
                 }
+                doGet(request,response);
+
 
                 break;
             case "registrar":

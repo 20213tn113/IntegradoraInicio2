@@ -26,24 +26,30 @@
 %>
 <html>
 <head>
-        <title>Inventario</title>
+    <title>Seleccione su equipo</title>
 
     <link rel="stylesheet" href="css/estilosinventario.css">
+    <link rel="stylesheet" href="css/estilosbotones.css">
     <link rel="stylesheet" href="css/estilosheader.css ">
     <link rel="stylesheet" href="css/sweetalert2.min.css">
-    <link rel="stylesheet" href="css/estilosbotones.css">
-
-
 
 </head>
 <body>
 <header>
     <div class="logo">
         <img src="img/logo-utez.png" class="logo-img">
-        <h2 id="h12">Inventario</h2>
+        <h2 id="h12">Seleccione su Equipo</h2>
     </div>
     <nav>
-        <a href="admin.jsp" class="nav-link" >Regresar</a>
+        <form action="ServletEquipos" method="post">
+            <input class="boton4" value="Terminar Prestamo" type="button" onclick="FinalizarPrestamo()">
+            <input type="hidden" value="volver" name="accion"/>
+            <input type="hidden" name="valor" id="valor" value="SWITCH"/>
+            <input type="hidden"  value="${id_prestamo}" id="id_prestamo" name="id_prestamo"/>
+            <input type="hidden" value="${valor}"  id="valor" name="valor" />
+            <input  class="boton4" type="submit" value="Volver"/>
+        </form>
+
 
     </nav>
 </header>
@@ -54,11 +60,10 @@
 
 <div class="acciones">
 
-    <a href="insertEquipo.jsp" class="boton2" > Agregar Equipo</a>
-
-    <label id="text1">  Buscar:</label>   <input value="" type="text" class="form-control pull-right" style="width:20%" id="search" placeholder="Ingrese un dato...">
+    <label id="text1">  Buscar:</label>   <input   type="text" class="form-control pull-right" style="width:20%" id="search" >
 
 </div>
+
 
 
 
@@ -71,13 +76,13 @@
 
             <th>Id_Equipo</th>
             <th>Nombre</th>
-            <th>Descripcion</th>
+            <th>Descripción</th>
             <th>Marca</th>
             <th>Modelo</th>
-            <th>Numero de serie</th>
+            <th>Número de serie</th>
             <th>Disponibilidad</th>
             <th>Estado</th>
-            <th>Acción</th>
+            <th >Acción</th>
         </tr>
         </thead>
         <tbody>
@@ -87,14 +92,13 @@
         <c:forEach var="equipos" items="${ListEquipos}" varStatus="status">
             <tr>
 
-
                 <td><c:out value="${equipos.id_eqo}"></c:out></td>
                 <td><c:out value="${equipos.nombre}"></c:out></td>
                 <td><c:out value="${equipos.descripcion}"></c:out></td>
                 <td><c:out value="${equipos.marca}"></c:out></td>
                 <td><c:out value="${equipos.modelo}"></c:out></td>
                 <td><c:out value="${equipos.n_serie}"></c:out></td>
-                <td>
+                <td  >
                     <c:choose>
                         <c:when test="${equipos.disponibilidad=='S'}">
                             Si
@@ -120,13 +124,20 @@
                     </c:choose>
                 </td>
 
-                <td>
-                    <h5>
-                            <input type="hidden" value="eliminar" name="accion"/>
-                            <input type="hidden" id="id" name="id" value="${equipos.id}"/>
-                            <button id="deleteUser" class="borrar" type="button" onclick="validarEliminar(${equipos.id})"> <ion-icon name="trash-sharp" size="small" ></ion-icon></button>
 
-                        <a href="<c:url value = "/getEquipo?id=${equipos.id}"/>" class="edit"> <ion-icon name="create-sharp" size="small"></ion-icon> </a></h5>
+                <td>
+
+
+
+                        <form action="ServletEquipos" method="post">
+                            <input type="hidden" value="borrarseleccion" name="accion"/>
+                            <input type="hidden" value="${equipos.id}" id="id" name="id">
+                            <input type="hidden"  value="${id_prestamo}" id="id_prestamo" name="id_prestamo"/>
+                            <input type="hidden" value="${valor}"  id="valor" name="valor" />
+                            <button class="borrar" type="submit" value="Seleccionar" > <ion-icon name="trash-sharp" size="small" ></ion-icon></button>
+                        </form>
+
+
                 </td>
             </tr>
         </c:forEach>
@@ -134,7 +145,6 @@
     </table>
 
 </div>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -158,6 +168,8 @@
 </script>
 
 
+
+
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -166,6 +178,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/accionesInventario.js"></script>
 <script src="js/sweetalert2.all.min.js"></script>
+<script src="js/accionesprestamoFinal.js"></script>
+
+
 
 
 </body>

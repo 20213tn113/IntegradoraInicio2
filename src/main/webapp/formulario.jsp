@@ -1,144 +1,137 @@
+<%@ page import="mx.edu.utez.integradorainicio.model.administration.person.beanEquipos" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
+
+
+<%@ page import="mx.edu.utez.integradorainicio.service.administration.person.DaoEquipos" %>
+<%@ page import="mx.edu.utez.integradorainicio.model.administration.person.beanEquipos" %>
+<%@ page import="java.util.List" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Lenovo
+  Date: 28/07/2022
+  Time: 11:13 p. m.
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String user=(String)(session.getAttribute("user"));
+    String pass=(String)(session.getAttribute("pass"));
+    if(user != null && pass !=null){
+        System.out.println("sesión: usuario: " + user + " pass: " +pass);
+
+%>
+<html>
 <head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registro</title>
+    <title>Title</title>
     <link rel="stylesheet" href="css/estilosheader.css">
-    <link rel="stylesheet" href="css/estiloformulario.css">
-        <!-- CSS only -->
+    <link rel="stylesheet" href="css/estilosInsertEquipo.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
-    <link rel="stylesheet" href="js/">
 </head>
 <body>
 
 <header>
     <div class="logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Logo-utez.png/300px-Logo-utez.png" alt="">
-        <h2 id="h12">PRESTAMOS DE EQUIPO</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Logo-utez.png/300px-Logo-utez.png"
+             alt="">
+        <h2 id="h12">FORMULARIO</h2>
     </div>
     <nav>
-        <a href="#" class="nav-link">Inicio</a>
-
+        <a href="getEquipos" class="nav-link">Regresar</a>
     </nav>
 </header>
 
 
 
-<center> <h2>REGISTRO</h2></center>
+<div class="principal">
 
-<div class="${clase}" role="alert">
-    <h4>${mensaje}</h4>
+
+    <div class="${clase}" role="alert">
+        <h4>${jsonData}</h4>
+    </div>
+
+    <%
+
+        DaoEquipos dao= new DaoEquipos();
+        beanEquipos u = new beanEquipos();
+        List<beanEquipos> uno = dao.consultarEquipos();
+        for (int i = 0; i < uno.size(); i++) {
+            //Guardo temporalmente al celular en posición i
+            beanEquipos temporal = uno.get(i);
+            //Creo un arreglo con el tamaño que es el numero de columnas
+            String[] fila = new String[9];
+            //Asigno valor a cada una de las posiciones de mi arreglo
+            fila[0] = temporal.getId() +"";
+            fila[1] = temporal.getId_eqo() + "";
+            fila[2] = temporal.getNombre() + "";
+            fila[3] = temporal.getDescripcion() + "";
+            fila[4] = temporal.getMarca() + "";
+            fila[5] = temporal.getModelo() + "";
+            fila[6] = temporal.getN_serie() + "";
+            fila[7] = temporal.getDisponibilidad() + "";
+            fila[8] = temporal.getEstado() + "";
+
+    %>
+    <input type="hidden" name="id_eqo2[]" id="id_eqo2[]" value="<%=fila[1]%>">
+    <input type="hidden" name="n_serie2[]" id="n_serie2[]" value="<%=fila[6]%>">
+    <%
+        }
+
+    %>
+
+
+    <fieldset>
+
+
+        <form action="ServletReservar" method="post">
+            <h2> <label>REGISTRA TU RESERVACION:</label></h2>
+
+            <p><label>Matricula:</label> <input type="text" name="matricula" id="matricula" /></p>
+            <p><label>Nombre:</label> <input type="text" name="nombre" id="nombre"/></p>
+            <p><label>Apellido:</label> <input type="text" name="apellido" id="apellido" /></p>
+            <p><label>Correo:</label> <input type="text" name="correo" id="correo" /></p>
+            <label>Rol:</label>
+            <select name="rol" id="rol">
+                <option value="S">Alumno</option>
+                <option value="N">Docente</option>
+            </select>
+
+            <p><label>Hora Inicio:</label>:</label> <input type="datetime-local" name="hora_inicio" id="hora_inicio"/></p>
+            <p><label>Hora Final :</label>:</label> <input type="datetime-local" name="hora_final" id="hora_final"/></p>
+
+
+            <input type="hidden" value="reservar" name="accion">
+            <input type="submit" class="boton">
+        </form>
+
+
+
+    </fieldset>
+
+    <div class="${clase}" role="alert">
+        <h4>${mensaje}</h4>
+    </div>
+
+
 </div>
 
-<section id="seccion1">
-    <form class="form-control bg-dark bg-opacity-50" action="ServletUsuario" method="post">
-
-        <div class="col-md-4">
-            <label class="form-label">Matricula: *</label>
-            <input type="text" class="form-control is-valid" name="matricula" required>
-
-        </div>
-
-        <div class="col-md-4">
-            <label class="form-label">Nombre: *</label>
-            <input type="text" class="form-control is-valid" name="nombre" required>
-
-        </div>
-
-        <div class="col-md-4">
-            <label for="validationServer01" class="form-label">Apellido: *</label>
-            <input type="text" class="form-control is-valid" name="apellido" required>
-
-        </div>
-
-        </div>
-        <div class="col-md-4">
-            <label class="form-label">Correo: *</label>
-            <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                <input type="text" class="form-control" name="correo">
-                <div id="validationServerUsernameFeedback" class="invalid-feedback">
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <label class="form-label">Cantidad: *</label>
-            <select class="form-select" name="cantidad">
-
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="0">...</option>
 
 
-            </select>
-            <div id="validationServer04Feedback" class="invalid-feedback">
-                seleccciones una cantidad.
-            </div>
 
-
-        </div>
-        <div class="col-md-3">
-            <label for="validationServer05" class="form-label">Fecha: *</label>
-            <input type="datetime-local" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
-            <div id="validationServer05Feedback" class="invalid-feedback">
-
-                Proporcione una fecha.
-            </div>
-        </div>
-        <div class="col-md-3">
-            <label for="validationServer05" class="form-label">Hora-inico: *</label>
-            <input type="datetime-local" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
-            <div id="validationServer05Feedback" class="invalid-feedback">
-                Proporcione una hora de incio.
-            </div>
-        </div>
-        </div>
-        </div>
-        <div class="col-md-3">
-            <label for="validationServer05" class="form-label">Hora-final: *</label>
-            <input type="datetime-local" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
-            <div id="validationServer05Feedback" class="invalid-feedback">
-                Proporcione una hora final.
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-check">
-                <label class="form-check-label" for="invalidCheck3">
-
-                    **NOTA** <BR>
-                    Para entregar el/los dispositivos prestados unicamente se tendra tolerancia de 15 minutos a la hora que usted indique en el presente formulario despues de eso se considerara entrega tardia y sera acredor a una sancion. <br>
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
-
-                    Agree to terms and conditions
-                </label>
-                <div id="invalidCheck3Feedback" class="invalid-feedback">
-                    You must agree before submitting.
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <label class="form-label">Rol: *</label>
-            <input type="text" class="form-control is-valid" name="rol" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div>
-
-        <div class="col-12">
-            <input type="hidden" value="reservar" name="action">
-            <button class="btn btn-primary" type="submit">RESERVAR</button>
-        </div>
-    </form>
-</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/accionesInsertEquipo.js"></script>
+<script src="js/sweetalert2.all.min.js"></script>
 
 
 </body>
 </html>
+
+<% }else{
+    System.out.println("No hay sesión iniciada!");
+    request.getRequestDispatcher("index.jsp").forward(request,response);
+
+}
+%>
+

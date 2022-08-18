@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/estilosSanciones.css">
     <link rel="stylesheet" href="css/menuestilo2.css">
     <link rel="stylesheet" href="css/estilos.css">
-    <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.esm.min.js.map"></script>
+
 </head>
 <body>
 <center>
@@ -60,7 +60,13 @@
             <img id="img1"
                  src="img/realipres.jpg"
                  alt="">
-            <a id="a1" href="menu.jsp">Acceder</a>
+            <form action="ServletEquipos" method="post">
+                <input type="hidden" value="prueba" name="accion"/>
+                <input type="hidden" name="valor" id="valor" value="SWITCH"/>
+                <!--<input id="a1" type="button" value="Acceder"/>-->
+                <a id="a1" href="formulario.jsp">Acceder</a>
+            </form>
+           <!-- <a id="a1" href="">Acceder</a>-->
         </div>
         <div>
             <P id="div1">Historial de Sanciones</P>

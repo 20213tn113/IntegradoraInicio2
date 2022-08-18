@@ -17,13 +17,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-@WebServlet(name = "ServletEquiposSolicitar",urlPatterns ={ "/getEquipos","/getEquipo"})
+@WebServlet(name = "ServletEquiposSolicitar",urlPatterns ={ "/getEquipos","/getEquipo","/consutlarEquipos2","/getEquipos2"})
 
 public class ServletEquiposSolicitar extends HttpServlet {
 
     Logger logger = Logger.getLogger("ServletEquiposSolicitar");
     String action;
     String urlRedirect = "/getEquipos";
+
 
 
     @Override
@@ -43,11 +44,18 @@ public class ServletEquiposSolicitar extends HttpServlet {
                 urlRedirect="inventario.jsp";
                 break;
 
+            case "/getEquipos2":
+                String valor = request.getParameter("valor") != null?request.getParameter("valor"):"0";
+                System.out.println("Este es el valor que llego: "+valor);
+                List<beanEquipos> ListEquipos2 = new DaoEquipos().consultarEquipos();
+                request.setAttribute("ListEquipos",ListEquipos2);
+                urlRedirect="seleccion.jsp";
+                break;
+
             case "/getEquipo":
                 String idEquipoString = request.getParameter("id")!=null?request.getParameter("id"):"0";
                 try {
                     int idEquipo = Integer.parseInt(idEquipoString);
-                    System.out.println("LLEGO EL ID: "+idEquipo);
                     beanEquipos equipos = new DaoEquipos().obtenerEquipos(idEquipo);
                     request.setAttribute("equipos",equipos);
 
@@ -55,6 +63,31 @@ public class ServletEquiposSolicitar extends HttpServlet {
                 }catch (Exception e){
                     urlRedirect="/getEquipos";
                 }
+                break;
+
+            case "/consutlarEquipos2":
+                String nombre=request.getParameter("nombre");
+                String disponibilidad=request.getParameter("disponibilidad");
+                System.out.println("Llego el nombre: "+nombre);
+                System.out.println("Llego la dispo: " + disponibilidad);
+                    try{
+                        beanEquipos equipos2;
+                        equipos2 = new beanEquipos(nombre,disponibilidad);
+                        DaoEquipos equiposDao = new DaoEquipos();
+
+                        if (equipos2 != null){
+                            System.out.println("Paso True");
+                            urlRedirect="insertEquipo.jsp";
+                        }else{
+                            System.out.println("Paso Fasle");
+                            urlRedirect="/getEquipos";
+                        }
+
+
+
+                    }catch (Exception e){
+                        urlRedirect="/getEquipos";
+                    }
                 break;
 
             default:

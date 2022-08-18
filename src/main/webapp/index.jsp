@@ -8,6 +8,9 @@
     <title>LOGIN</title>
     <link rel="stylesheet" href="css/estilos_index.css">
     <link rel="stylesheet" href="css/header_index.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+
 </head>
 
 <body>
@@ -27,7 +30,7 @@
 
     <form class="form-control bg-dark bg-opacity-50" action="ServletSesion" method="post">
         <div id="div2">
-           <!-- <label for="user">Usuario: </label>  -->
+            <!-- <label for="user">Usuario: </label>  -->
             <input type="text"  id="user" name="user" placeholder="Usuario" >
         </div>
         <div id="div3">
@@ -45,6 +48,10 @@
         <h4 class="h41">${mensaje}</h4>
     </div>
 </div>
+
+<script src="js/accionesIndex.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/sweetalert2.all.min.js"></script>
 
 
 </body>

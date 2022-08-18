@@ -13,6 +13,9 @@ public class beanEquipos {
     private String estado;
 
 
+
+
+
     public beanEquipos(int id, String id_eqo, String nombre, String descripcion, String marca, String modelo, String n_serie, String disponibilidad, String estado) {
         this.id = id;
         this.id_eqo = id_eqo;
@@ -37,11 +40,19 @@ public class beanEquipos {
     }
 
 
+    public beanEquipos(String id_eqo) {
+        this.id_eqo = id_eqo;
+    }
 
-
-
+    public beanEquipos(int id) {
+        this.id = id;
+    }
 
     public beanEquipos(){    }
+
+    public beanEquipos(String id_eqo, String nombre) {
+
+    }
 
     public void setId(int id) {
         this.id = id;

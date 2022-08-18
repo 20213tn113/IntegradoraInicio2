@@ -40,7 +40,8 @@
 
 
         <fieldset>
-            <legend>Actualización de Equipo</legend>
+            <h2><label>Actualización de Equipo</label></h2>
+
             <p><label>Id de Equipo: </label> <input type="text" id="id_eqo" name="id_eqo" value="${equipos.id_eqo}"/></p>
             <p><label>Nombre: </label> <input type="text" id="nombre" name="nombre" value="${equipos.nombre}"/></p>
             <p><label>Descripción: </label> <input type="text" id="descripcion" name="descripcion" value="${equipos.descripcion}"/></p>
@@ -50,7 +51,6 @@
 
             <p><label>Disponibilidad: </label>
                 <select id="disponibilidad" name="disponibilidad">
-
                 <option
                         <c:choose>
                             <c:when test="${equipos.disponibilidad=='S'}">

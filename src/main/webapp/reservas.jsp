@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page pageEncoding="UTF-8" %>
 
 <%
     String user = (String) (session.getAttribute("user"));
@@ -22,10 +24,6 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
     <link rel="stylesheet" href="css/estilosSanciones.css">
 
-
-    <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.esm.min.js.map"></script>
-
-
 </head>
 
 <body>
@@ -48,62 +46,43 @@
     <html>
 
     <form> Busqueda: <input id="txtBusqueda" type="text" onkeyup="Buscar();" /></form>
-    <table id="reservas">
-
+    <table border="1"id="reservas">
+        <thead>
         <tr>
-            <th>Fecha</th>
-            <th>Correo</th>
-            <th>Nombre</th>
-            <th>Equipo</th>
-            <th>Cantidad</th>
+            <th>Id_Prestamo</th>
+            <th>Matrícula</th>
             <th>Hora-Inicio</th>
             <th>Hora-Final</th>
             <th>Estatus de Entrega</th>
             <th>Observaciones</th>
         </tr>
-        <tr>
-            <td>13/junio/2022</td>
-            <td>20213tn063@utez.edu.mx</td>
-            <td>Jahaira Gomez Rebolledo</td>
-            <td>Router</td>
-            <td>4</td>
-            <td>13:00</td>
-            <td>15:00</td>
-            <td><select name="estatus" id="est">
-                <option value="p">Pendiente</option>
-                <option value="n">No Entregado</option>
-                <option value="t">Entrega Tardia</option>
-                <option value="e">Entregado</option>
-            </select>
-            </td>
-            <td><select name="observa" id="obs">
-                <option value="b">Buen Estado</option>
-                <option value="m">Equipo Dañado</option>
-            </select>
-            </td>
-            <td><input type="button" value="Eliminar" /></td>
-
-        </tr>
-        <tr class="alt">
-            <td>Larry Page</td>
-            <td>Google</td>
-            <td>https://www.google.com.co</td>
-            <td><input type="button" value="Eliminar" /></td>
-        </tr>
-        <tr>
-            <td>Peter Thiel</td>
-            <td>PayPal</td>
-            <td>https://www.paypal.com</td>
-            <td><input type="button" value="Eliminar" /></td>
-        </tr>
-        <tr class="alt">
-            <td>Bill Gates</td>
-            <td>Microsoft</td>
-            <td>www.microsoft.com</td>
-            <td><input type="button" value="Eliminar" /></td>
-        </tr>
-
+        </thead>
+        <tbody>
+        <c:forEach var="reservas" items="${ListReservas}" varStatus="status">
+            <tr>
+                <td><c:out value="${reservas.id_prestamo}"></c:out></td>
+                <td><c:out value="${reservas.matricula}"></c:out></td>
+                <td><c:out value="${reservas.hora_inicio}"></c:out></td>
+                <td><c:out value="${reservas.hora_final}"></c:out></td>
+                <td><select name="estatus" id="est">
+                    <option value="p">Pendiente</option>
+                    <option value="n">No Entregado</option>
+                    <option value="t">Entrega Tardia</option>
+                    <option value="e">Entregado</option>
+                </select>
+                </td>
+                <td><select name="observa" id="obs">
+                    <option value="b">Buen Estado</option>
+                    <option value="m">Equipo Dañado</option>
+                </select>
+                </td>
+                <a href="<c:url value = "/ServletMostrarReservas?id=${equipos.id}"/>"> </a></h5>
+            </tr>
+        </c:forEach>
+        </tbody>
     </table>
+
+
     <script type="text/javascript">// < ![CDATA[
     function Eliminar(i) {
         document.getElementsByTagName("table")[0].setAttribute("id", "tableid");
@@ -138,10 +117,6 @@
 
 </div>
 
-<section class="botones">
-    <input type="button" id="add" value="Modificar">
-    <input type="button" id="add" value="Actualizar">
-</section>
 
 
 
@@ -153,5 +128,5 @@
     System.out.println("No hay sesión iniciada!");
     request.getRequestDispatcher("index.jsp").forward(request,response);
 
-    }
+}
 %>
